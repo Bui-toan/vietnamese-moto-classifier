@@ -1,0 +1,61 @@
+path,sha256,group_id,gt_label,pred_top1,pred_top2,pred_top3,prob_top1,prob_top2,prob_top3,rejected,correct_top1,correct_top2,correct_top3,handled_ok,latency_ms
+dummy_0.png,mock_sha256,g_0,Honda Wave,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3228682,0.16946693,0.16420951,True,False,False,False,False,13.790100056212395
+dummy_1.png,mock_sha256,g_1,Honda Vision,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31912172,0.17165324,0.16072738,True,True,True,True,True,7.250100024975836
+dummy_2.png,mock_sha256,g_2,Honda Air Blade,Honda Vision,Yamaha Exciter,Honda Air Blade,0.32182756,0.16627966,0.16390994,True,False,False,True,False,7.011900015641004
+dummy_3.png,mock_sha256,g_3,Yamaha Exciter,Honda Vision,Yamaha Exciter,Honda Air Blade,0.32248992,0.17205444,0.1597208,True,False,True,True,False,5.641199997626245
+dummy_4.png,mock_sha256,g_4,Piaggio Vespa,Honda Vision,Yamaha Exciter,Honda Air Blade,0.29908624,0.17413175,0.1730469,True,False,False,False,False,6.063200009521097
+dummy_5.png,mock_sha256,g_5,Honda SH,Honda Vision,Honda Air Blade,Yamaha Exciter,0.33623305,0.16194473,0.15895379,True,False,False,False,False,4.544600029475987
+dummy_6.png,mock_sha256,g_6,Honda Wave,Honda Vision,Yamaha Exciter,Honda Air Blade,0.3014283,0.17083164,0.16999875,True,False,False,False,False,5.8595999726094306
+dummy_7.png,mock_sha256,g_7,Honda Vision,Honda Vision,Yamaha Exciter,Honda Air Blade,0.32368904,0.16665614,0.16412598,True,True,True,True,True,6.874699960462749
+dummy_8.png,mock_sha256,g_8,Honda Air Blade,Honda Vision,Yamaha Exciter,Honda Air Blade,0.32078925,0.17338723,0.16663972,True,False,False,True,False,6.42130000051111
+dummy_9.png,mock_sha256,g_9,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31141993,0.1750362,0.16933742,True,False,False,True,False,6.044499983545393
+dummy_10.png,mock_sha256,g_0,Piaggio Vespa,Honda Vision,Honda Air Blade,Yamaha Exciter,0.30283105,0.17207739,0.17108168,True,False,False,False,False,5.447699979413301
+dummy_11.png,mock_sha256,g_1,Honda SH,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3230762,0.17176662,0.16211976,True,False,False,False,False,5.663399992045015
+dummy_12.png,mock_sha256,g_2,Honda Wave,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31704038,0.17222695,0.16710003,True,False,False,False,False,6.957400008104742
+dummy_13.png,mock_sha256,g_3,Honda Vision,Honda Vision,Honda Air Blade,Yamaha Exciter,0.33146027,0.16769417,0.16106988,True,True,True,True,True,5.580099998041987
+dummy_14.png,mock_sha256,g_4,Honda Air Blade,Honda Vision,Yamaha Exciter,Honda Air Blade,0.30504358,0.17716569,0.16961429,True,False,False,True,False,6.542099989019334
+dummy_15.png,mock_sha256,g_5,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32207134,0.16855106,0.16293196,True,False,False,True,False,6.063100008759648
+dummy_16.png,mock_sha256,g_6,Piaggio Vespa,Honda Vision,Yamaha Exciter,Honda Air Blade,0.31896526,0.16579938,0.1647855,True,False,False,False,False,5.4536999668926
+dummy_17.png,mock_sha256,g_7,Honda SH,Honda Vision,Yamaha Exciter,Honda Air Blade,0.3290494,0.16804998,0.1620319,True,False,False,False,False,6.819300004281104
+dummy_18.png,mock_sha256,g_8,Honda Wave,Honda Vision,Yamaha Exciter,Honda Air Blade,0.31389472,0.17258036,0.1656624,True,False,False,False,False,5.204999994020909
+dummy_19.png,mock_sha256,g_9,Honda Vision,Honda Vision,Yamaha Exciter,Honda Air Blade,0.30823803,0.17752373,0.1712878,True,True,True,True,True,6.2138999928720295
+dummy_20.png,mock_sha256,g_0,Honda Air Blade,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31484666,0.17423406,0.17042345,True,False,True,True,False,5.6378000299446285
+dummy_21.png,mock_sha256,g_1,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32106003,0.16872165,0.16521528,True,False,False,True,False,5.412900005467236
+dummy_22.png,mock_sha256,g_2,Piaggio Vespa,Honda Vision,Yamaha Exciter,Honda SH,0.31347853,0.16912217,0.16082796,True,False,False,False,False,8.706099994014949
+dummy_23.png,mock_sha256,g_3,Honda SH,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3223986,0.17305999,0.15681766,True,False,False,False,False,5.5540999746881425
+dummy_24.png,mock_sha256,g_4,Honda Wave,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3171449,0.17256491,0.16663551,True,False,False,False,False,6.856599997263402
+dummy_25.png,mock_sha256,g_5,Honda Vision,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3291745,0.16612618,0.16266336,True,True,True,True,True,5.557299999054521
+dummy_26.png,mock_sha256,g_6,Honda Air Blade,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31513244,0.17121007,0.16697595,True,False,True,True,False,6.220599985681474
+dummy_27.png,mock_sha256,g_7,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32397127,0.16429517,0.16051874,True,False,False,True,False,4.785700002685189
+dummy_28.png,mock_sha256,g_8,Piaggio Vespa,Honda Vision,Honda Air Blade,Honda SH,0.32242784,0.17119773,0.15816177,True,False,False,False,False,4.3947999947704375
+dummy_29.png,mock_sha256,g_9,Honda SH,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31425768,0.1695012,0.1638088,True,False,False,False,False,5.708999990019947
+dummy_30.png,mock_sha256,g_0,Honda Wave,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31480426,0.16862547,0.16608135,True,False,False,False,False,5.811799957882613
+dummy_31.png,mock_sha256,g_1,Honda Vision,Honda Vision,Honda Air Blade,Yamaha Exciter,0.30722567,0.1759668,0.170756,True,True,True,True,True,4.4157999800518155
+dummy_32.png,mock_sha256,g_2,Honda Air Blade,Honda Vision,Honda Air Blade,Honda SH,0.32207176,0.1676987,0.1569975,True,False,True,True,False,7.183200039435178
+dummy_33.png,mock_sha256,g_3,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3316618,0.16916357,0.16403013,True,False,False,True,False,6.055699952412397
+dummy_34.png,mock_sha256,g_4,Piaggio Vespa,Honda Vision,Yamaha Exciter,Honda Air Blade,0.31880787,0.17057286,0.17050603,True,False,False,False,False,6.525199976749718
+dummy_35.png,mock_sha256,g_5,Honda SH,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32996902,0.17300236,0.16100034,True,False,False,False,False,5.844299972523004
+dummy_36.png,mock_sha256,g_6,Honda Wave,Honda Vision,Honda Air Blade,Honda SH,0.3297908,0.16193794,0.16173454,True,False,False,False,False,5.7536999811418355
+dummy_37.png,mock_sha256,g_7,Honda Vision,Honda Vision,Honda Air Blade,Honda SH,0.3148,0.17154743,0.15961252,True,True,True,True,True,5.968199984636158
+dummy_38.png,mock_sha256,g_8,Honda Air Blade,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32513896,0.1735053,0.16815186,True,False,True,True,False,4.507499979808927
+dummy_39.png,mock_sha256,g_9,Yamaha Exciter,Honda Vision,Honda Air Blade,Honda SH,0.30752188,0.18348321,0.16202997,True,False,False,False,False,5.657400004565716
+dummy_40.png,mock_sha256,g_0,Piaggio Vespa,Honda Vision,Yamaha Exciter,Honda Air Blade,0.33867034,0.15909612,0.15673724,True,False,False,False,False,7.085999997798353
+dummy_41.png,mock_sha256,g_1,Honda SH,Honda Vision,Yamaha Exciter,Honda Air Blade,0.32348475,0.16908397,0.1626035,True,False,False,False,False,6.189199979417026
+dummy_42.png,mock_sha256,g_2,Honda Wave,Honda Vision,Yamaha Exciter,Honda Air Blade,0.3267297,0.164265,0.1524063,True,False,False,False,False,6.630100018810481
+dummy_43.png,mock_sha256,g_3,Honda Vision,Honda Vision,Honda Air Blade,Yamaha Exciter,0.323579,0.1634114,0.16274099,True,True,True,True,True,5.9637000085785985
+dummy_44.png,mock_sha256,g_4,Honda Air Blade,Honda Vision,Yamaha Exciter,Honda Air Blade,0.31810066,0.16892081,0.16438764,True,False,False,True,False,6.790400017052889
+dummy_45.png,mock_sha256,g_5,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32690296,0.16640876,0.16349693,True,False,False,True,False,5.545300024095923
+dummy_46.png,mock_sha256,g_6,Piaggio Vespa,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32388777,0.17285582,0.15926021,True,False,False,False,False,6.1218999908305705
+dummy_47.png,mock_sha256,g_7,Honda SH,Honda Vision,Yamaha Exciter,Honda Air Blade,0.32308403,0.16543718,0.16236137,True,False,False,False,False,6.93700002739206
+dummy_48.png,mock_sha256,g_8,Honda Wave,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3091024,0.1739931,0.16195592,True,False,False,False,False,5.721300025470555
+dummy_49.png,mock_sha256,g_9,Honda Vision,Honda Vision,Yamaha Exciter,Honda Air Blade,0.31090084,0.16893895,0.16698411,True,True,True,True,True,5.248000030405819
+dummy_50.png,mock_sha256,g_0,Honda Air Blade,Honda Vision,Honda Air Blade,Yamaha Exciter,0.32673192,0.16483004,0.1626561,True,False,True,True,False,6.741599994711578
+dummy_51.png,mock_sha256,g_1,Yamaha Exciter,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3163017,0.17183937,0.17025436,True,False,False,True,False,6.055000005289912
+dummy_52.png,mock_sha256,g_2,Piaggio Vespa,Honda Vision,Yamaha Exciter,Honda Air Blade,0.33361566,0.1683363,0.15782873,True,False,False,False,False,6.2055999878793955
+dummy_53.png,mock_sha256,g_3,Honda SH,Honda Vision,Honda SH,Honda Air Blade,0.3137395,0.16631396,0.16418327,True,False,True,True,False,4.380400001537055
+dummy_54.png,mock_sha256,g_4,Honda Wave,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31991476,0.16646378,0.16510367,True,False,False,False,False,4.2640999890863895
+dummy_55.png,mock_sha256,g_5,Honda Vision,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3315365,0.1632669,0.15954119,True,True,True,True,True,7.4822999886237085
+dummy_56.png,mock_sha256,g_6,Honda Air Blade,Honda Vision,Honda Air Blade,Yamaha Exciter,0.3195259,0.16607781,0.16292582,True,False,True,True,False,5.956700013484806
+dummy_57.png,mock_sha256,g_7,Yamaha Exciter,Honda Vision,Yamaha Exciter,Honda Air Blade,0.3230998,0.16827835,0.16342333,True,False,True,True,False,6.966199958696961
+dummy_58.png,mock_sha256,g_8,Piaggio Vespa,Honda Vision,Honda Air Blade,Yamaha Exciter,0.31280315,0.17166573,0.16256928,True,False,False,False,False,5.833800008986145
+dummy_59.png,mock_sha256,g_9,Honda SH,Honda Vision,Yamaha Exciter,Honda Air Blade,0.3249883,0.17173326,0.16013396,True,False,False,False,False,8.353399985935539

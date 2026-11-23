@@ -1,0 +1,19 @@
+{
+  "model_name": "M3_CNN2",
+  "best_hyperparams": {
+    "lr": 0.001,
+    "wd": 0.001
+  },
+  "classes": [
+    "Honda Wave",
+    "Honda Vision",
+    "Honda Air Blade",
+    "Yamaha Exciter",
+    "Piaggio Vespa",
+    "Honda SH"
+  ],
+  "img_size": [
+    112,
+    112
+  ]
+}

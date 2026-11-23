@@ -1,0 +1,53 @@
+{
+  "top1_acc": 0.13333333333333333,
+  "top2_acc": 0.3333333333333333,
+  "top3_acc": 0.5833333333333334,
+  "macro_f1": 0.12348612661088003,
+  "weighted_f1": 0.12348612661088003,
+  "per_class": {
+    "Honda Wave": {
+      "precision": 0.1111111111111111,
+      "recall": 0.1,
+      "f1": 0.10526315789473685,
+      "support": 10
+    },
+    "Honda Vision": {
+      "precision": 0.15384615384615385,
+      "recall": 0.2,
+      "f1": 0.17391304347826086,
+      "support": 10
+    },
+    "Honda Air Blade": {
+      "precision": 0.10526315789473684,
+      "recall": 0.2,
+      "f1": 0.13793103448275862,
+      "support": 10
+    },
+    "Yamaha Exciter": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 10
+    },
+    "Piaggio Vespa": {
+      "precision": 0.2,
+      "recall": 0.1,
+      "f1": 0.13333333333333333,
+      "support": 10
+    },
+    "Honda SH": {
+      "precision": 0.18181818181818182,
+      "recall": 0.2,
+      "f1": 0.1904761904761905,
+      "support": 10
+    }
+  },
+  "nll_before": 19.626218795776367,
+  "nll_after": 6.058712482452393,
+  "ece_before": 0.8347516268491746,
+  "ece_after": 0.733979551990827,
+  "temperature": 5.0,
+  "default_threshold": 0.5,
+  "ood_threshold": 0.5,
+  "reject_threshold": 0.5
+}

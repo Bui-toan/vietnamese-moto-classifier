@@ -1,0 +1,16 @@
+{
+  "model_name": "M1_HOG_SVM",
+  "frozen": true,
+  "weights": {
+    "path": "models/m1_hog_svm.npz",
+    "sha256": "38b4520f2cd61f4b8d51fdc9ee6a9b117dcf0938e07e2a8ca9280c9e98f0fd2d"
+  },
+  "stats": {
+    "path": "models/hog_stats.npz",
+    "sha256": "30135eddd6d051c4da134e2938872624f4f4a7ce104a546aa088969a5bb4c36f"
+  },
+  "config": {
+    "path": "reports/m1_hog_svm\\config.json",
+    "sha256": "c3474b51a13737145e240862ada0dd89bc18b93fceb9fd21a3abad777d319fe8"
+  }
+}

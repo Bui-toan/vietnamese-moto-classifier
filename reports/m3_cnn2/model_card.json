@@ -1,0 +1,16 @@
+{
+  "model_name": "M3_CNN2",
+  "frozen": true,
+  "weights": {
+    "path": "models/m3_cnn2.pt",
+    "sha256": "4fab431c6b8a13cae2a9ca156f08120db3e503edf6fdaaf49593d6a9efdb14d8"
+  },
+  "stats": {
+    "path": "models/cnn2_stats.npz",
+    "sha256": "b503ef3d9b1e885970cf42a87d08f285cf78f0a7959b1928e1ecdbc06274bd98"
+  },
+  "config": {
+    "path": "reports/m3_cnn2\\config.json",
+    "sha256": "ee27e26c60d2fa3000c1c7999e87af27939930e21545167c7eff5402514ab0ba"
+  }
+}

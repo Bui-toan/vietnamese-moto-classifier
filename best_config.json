@@ -1,0 +1,31 @@
+{
+  "model": "M3_CNN2",
+  "classes": [
+    "Honda Wave",
+    "Honda Vision",
+    "Honda Air Blade",
+    "Yamaha Exciter",
+    "Piaggio Vespa",
+    "Honda SH"
+  ],
+  "img_size": [
+    112,
+    112
+  ],
+  "stats_file": "models/cnn2_stats.npz",
+  "selection_criterion": "val_macro_f1",
+  "val_metrics": {
+    "top1_acc": 0.18333333333333332,
+    "top3_acc": 0.43333333333333335,
+    "macro_f1": 0.17209283801355413,
+    "seeds_mean": 0.19681303863955188,
+    "seeds_std": 0.03926919919247956
+  },
+  "default_threshold": 0.5,
+  "ood_threshold": 0.5,
+  "reject_threshold": 0.5,
+  "temperature": 5.0,
+  "weights_path": "models/m3_cnn2.pt",
+  "weights_sha256": "4fab431c6b8a13cae2a9ca156f08120db3e503edf6fdaaf49593d6a9efdb14d8",
+  "created_at": "2026-11-23T03:57:21.026276+00:00"
+}

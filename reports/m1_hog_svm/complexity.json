@@ -1,0 +1,10 @@
+{
+  "total_params": 36510,
+  "trainable_params": 36510,
+  "macs": null,
+  "model_size_mb": 0.13090229034423828,
+  "train_time_s": 1.0967822074890137,
+  "best_epoch": 50,
+  "seeds_f1_mean": 0.12004907873600205,
+  "seeds_f1_std": 0.017021564545948886
+}
