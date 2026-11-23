@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.swp
+*.lock
+.DS_Store
+Thumbs.db
+data/test_frozen_copy/
