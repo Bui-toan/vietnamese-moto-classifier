@@ -11,6 +11,7 @@ __pycache__/
 
 # Dữ liệu ảnh nặng (Dataset images - Không đẩy lên Git)
 data/raw/
+data/processed/
 data/test_frozen/
 data/test_frozen_copy/
 *.jpg

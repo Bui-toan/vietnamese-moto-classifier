@@ -25,18 +25,24 @@ Mở terminal (PowerShell trên Windows) tại thư mục gốc của dự án (
 pip install -r requirements.txt
 ```
 
-### 1.2. Tổ chức ảnh và tạo file `data/manifest.csv`
-- Đặt ảnh tự chụp hoặc thu thập được vào thư mục `data/raw/` (chia theo từng lớp hoặc đặt chung kèm đường dẫn rõ ràng).
-- Chuẩn bị file danh sách dữ liệu **`data/manifest.csv`** có định dạng như sau:
+### 1.2. Tổ chức ảnh và Quy trình Resize 2 lớp (Offline + Online)
+- Đặt ảnh gốc thu thập được vào thư mục `data/raw/` (chia theo từng lớp hoặc đặt chung).
+- **Offline Resize (Chạy 1 lần duy nhất trước khi train)**:
+  Hạ kích thước toàn bộ ảnh gốc có cạnh dài > 800px về tối đa 800px (dùng `cv2.INTER_AREA`, lưu JPEG quality 85) để giảm 90% dung lượng đĩa và tăng tốc độ đọc của DataLoader gấp 5 lần:
+  ```bash
+  python src/data/resize_raw.py --raw-dir data/raw --processed-dir data/processed
+  ```
+  *(Khuyên dùng: Resize ảnh xong mới mở LabelImg để gán nhãn trên ảnh 800px trong `data/processed/` cho nhàn).*
+- Chuẩn bị file danh sách dữ liệu **`data/manifest.csv`** trỏ vào các ảnh đã resize:
 ```csv
 image_path,label,group_id,bbox
-data/raw/wave/img_001.jpg,Honda Wave,wave_locA_01,"[30, 40, 450, 600]"
-data/raw/vision/img_002.jpg,Honda Vision,vis_locB_01,"[20, 50, 400, 580]"
-data/raw/airblade/img_003.jpg,Honda Air Blade,ab_locC_01,"[15, 30, 420, 590]"
-data/raw/exciter/img_004.jpg,Yamaha Exciter,ex_locD_01,"[25, 45, 430, 610]"
-data/raw/vespa/img_005.jpg,Piaggio Vespa,vespa_locE_01,"[10, 20, 410, 570]"
-data/raw/sh/img_006.jpg,Honda SH,sh_locF_01,"[35, 55, 460, 620]"
-data/raw/ood/img_999.jpg,ood,ood_street_01,""
+data/processed/wave/img_001.jpg,Honda Wave,wave_locA_01,"[15, 20, 225, 300]"
+data/processed/vision/img_002.jpg,Honda Vision,vis_locB_01,"[10, 25, 200, 290]"
+data/processed/airblade/img_003.jpg,Honda Air Blade,ab_locC_01,"[12, 18, 210, 295]"
+data/processed/exciter/img_004.jpg,Yamaha Exciter,ex_locD_01,"[15, 22, 215, 305]"
+data/processed/vespa/img_005.jpg,Piaggio Vespa,vespa_locE_01,"[10, 15, 205, 285]"
+data/processed/sh/img_006.jpg,Honda SH,sh_locF_01,"[18, 28, 230, 310]"
+data/processed/ood/img_999.jpg,ood,ood_street_01,""
 ```
 
 > **Quy tắc về Group ID**:

@@ -62,14 +62,20 @@ streamlit run app/app.py
 Khi nhóm đã thu thập xong ảnh (khoảng 200 - 700 ảnh/lớp), hãy làm theo các bước chuẩn sau:
 
 ### 2.1. Đặt ảnh và chuẩn bị file `data/manifest.csv`
-1. Đặt ảnh vào thư mục `data/raw/` (chia theo các lớp: `wave/`, `vision/`, `airblade/`, `exciter/`, `vespa/`, `sh/`, và `ood/` cho xe lạ/ảnh đường phố).
-2. Điền thông tin vào file `data/manifest.csv`:
+1. Đặt ảnh gốc thu thập được vào thư mục `data/raw/` (chia theo các lớp: `wave/`, `vision/`, `airblade/`, `exciter/`, `vespa/`, `sh/`, và `ood/`).
+2. **Quy trình Resize 2 lớp (Bắt buộc để chống tràn RAM và tăng tốc DataLoader gấp 5 lần)**:
+   - Chạy script hạ kích thước ảnh gốc về tối đa 800px:
+   ```bash
+   python src/data/resize_raw.py --raw-dir data/raw --processed-dir data/processed
+   ```
+   *Lưu ý:* Nên resize ảnh trước rồi mới dùng LabelImg gán nhãn trên ảnh `data/processed/` để tọa độ bbox khít và nhàn nhất. Nếu đã lỡ gán nhãn trên ảnh gốc, script `resize_raw.py` sẽ tự động nhân tỉ lệ để cập nhật lại tọa độ bbox sang `data/manifest_processed.csv`.
+3. Điền thông tin vào file `data/manifest.csv` (hoặc dùng `data/manifest_processed.csv`):
 ```csv
 image_path,label,group_id,bbox
-data/raw/wave/img_001.jpg,Honda Wave,wave_locA_01,"[30, 40, 450, 600]"
-data/raw/vision/img_002.jpg,Honda Vision,vis_locB_01,"[20, 50, 400, 580]"
+data/processed/wave/img_001.jpg,Honda Wave,wave_locA_01,"[15, 20, 225, 300]"
+data/processed/vision/img_002.jpg,Honda Vision,vis_locB_01,"[10, 25, 200, 290]"
 ...
-data/raw/ood/img_999.jpg,ood,ood_street_01,""
+data/processed/ood/img_999.jpg,ood,ood_street_01,""
 ```
 *(Lưu ý: Bắt buộc điền đúng `group_id` cho từng chiếc xe cụ thể để tránh rò rỉ dữ liệu giữa train và test).*
 
