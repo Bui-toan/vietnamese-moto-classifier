@@ -1,17 +1,17 @@
 id,loai,kiem_tra,ky_vong,thuc_te,trang_thai,file_bang_chung
-TC-01,Unit,letterbox ảnh 640x480,"Shape (112,112,3), giữ tỉ lệ, viền đệm giá trị trung bình","Shape (112, 112, 3), viền đệm 124",PASS,tests/test_core.py
-TC-02,Unit,"HOG: ảnh 8x8, 16x16, 112x112",8x8 báo lỗi; 16x16 cho 36; 112x112 cho 6084 không NaN,"8x8 error=True, 16x16=36, 112x112=6084",PASS,tests/test_core.py
-TC-03,Unit,"Xoay 0°, rồi +θ −θ",Giống ảnh gốc / PSNR > 30 dB vùng lõi,PSNR = 60.63 dB,PASS,tests/test_core.py
-TC-04,Unit,metrics trên ma trận nhầm lẫn nhỏ tính tay,"Accuracy, macro-F1 khớp tuyệt đối",Accuracy = 0.6667 khớp 4/6,PASS,tests/test_metrics.py
-TC-05,Data,"check_leak, near-duplicate",Không rò rỉ group; aHash 8x8 phát hiện near-duplicate,"Clean hoàn toàn, Hamming <= 5 được phân lập",PASS,tests/test_data_pipeline.py
-TC-06,Data,Sửa 1 byte trong bản sao ảnh test,Pre-flight verify_lock báo FAIL,Bắt lỗi lệch hash lập tức (exit code 1),PASS,tests/test_data_pipeline.py
-TC-07,Model,"Chạy M1, M2, M3 trên test","Đủ metric, sổ I/O ledger cho 3 model",Đã tạo đủ io_ledger_*.csv và metrics_*.csv,PASS,evidence/io_ledger_M3_CNN2.csv
-TC-08,Model,So sánh 3 model,Bảng so sánh + McNemar + Delta Macro-F1 có CI,mcnemar.csv và training_summary.csv đầy đủ,PASS,evidence/mcnemar.csv
-TC-09,Model,Ma trận nhầm lẫn 6x6 + cột Từ chối,File ảnh và CSV cho cả 3 model,Đủ 3 file confusion_*.png và .csv,PASS,evidence/confusion_M3_CNN2.png
-TC-10,Robust,"Blur sigma in {1, 2, 3}",Giảm Top-1 <= 8 điểm % tại sigma=2,Giảm 4.2 điểm % tại sigma=2,PASS,evidence/robust_blur.csv
+TC-01,Unit,letterbox ảnh 640x480,"Shape (112,112,3), giữ tỉ lệ, viền đệm giá trị trung bình","Shape (112, 112, 3)",PASS,src/preprocess/letterbox.py
+TC-02,Unit,"HOG: 8x8, 16x16, 112x112",8x8 báo lỗi; 16x16 cho 36; 112x112 cho 6084 không NaN,"8x8 err=True, 16x16=36, 112x112=6084",PASS,src/preprocess/hog.py
+TC-03,Unit,"Xoay 0°, rồi +θ −θ",PSNR > 30 dB vùng lõi,PSNR = 60.63 dB,PASS,src/preprocess/transforms.py
+TC-04,Unit,metrics tính tay,"Accuracy, macro-F1 khớp tuyệt đối",Acc = 0.6667 khớp 4/6,PASS,src/evaluation/metrics.py
+TC-05,Data,"check_leak, near-duplicate",Không rò rỉ; aHash 8x8 phát hiện near-duplicate,"Clean hoàn toàn, Hamming <= 5",PASS,src/data/check_leak.py
+TC-06,Data,Sửa 1 byte trong bản sao ảnh test,Pre-flight verify_lock báo FAIL,Bắt lỗi sai hash lập tức,PASS,src/data/verify_lock.py
+TC-07,Model,"Chạy M1, M2, M3 trên test","Đủ metric, sổ I/O ledger cho 3 model",Đủ 3 file io_ledger_*.csv,PASS,evidence/io_ledger_M3_CNN2.csv
+TC-08,Model,So sánh 3 model,Bảng + McNemar + Delta Macro-F1 có CI,mcnemar.csv đầy đủ,PASS,evidence/mcnemar.csv
+TC-09,Model,Ma trận nhầm lẫn 6x6 + cột Từ chối,File ảnh và CSV cho cả 3 model,Đủ confusion_*.png và .csv,PASS,evidence/confusion_M3_CNN2.png
+TC-10,Robust,"Blur sigma in {1,2,3}",Giảm Top-1 <= 8 điểm % tại sigma=2,Giảm 4.2 điểm % tại sigma=2,PASS,evidence/robust_blur.csv
 TC-11,Robust,Xoay +-5/10/15°,Giảm <= 10 điểm % tại +-10°,Giảm 5.5 điểm % tại 10°,PASS,evidence/robust_rotate.csv
 TC-12,Robust,Che 10/20/30%,Giảm <= 15 điểm % tại 20%,Giảm 8.1 điểm % tại 20%,PASS,evidence/robust_occlude.csv
-TC-13,Robust,BBox rộng thêm 15/30% và lệch tâm 10%,BBox rộng 15% giảm <= 10 điểm %,Giảm 3.8 điểm % (nhờ bbox jitter khi train),PASS,evidence/robust_bbox.csv
+TC-13,Robust,BBox rộng thêm 15/30% và lệch tâm 10%,BBox rộng 15% giảm <= 10 điểm %,Giảm 3.8 điểm %,PASS,evidence/robust_bbox.csv
 TC-14,OOD,Bộ OOD-test (xe ngoài 6 lớp),Chỉ tiêu tham khảo >= 80% từ chối,83.33% bị từ chối conf < reject_threshold,PASS,evidence/ood_reject.csv
 TC-15,Detector,Bộ ảnh nhiều xe (test),"Tối thiểu Recall >= 0.50, Precision >= 0.40","Recall = 0.58, Precision = 0.48",PASS,evidence/detect_metrics.csv
 TC-16,UI,"Streamlit AppTest: ảnh 1 xe, ảnh 2 xe","Không crash, tiếng Việt, ảnh 2 xe vẽ đúng 2 khung","Vẽ đúng khung 1, 2 kèm chú thích bên dưới",PASS,evidence/screenshots/tc16_multi_motor.png
