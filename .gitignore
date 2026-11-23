@@ -1,10 +1,47 @@
+# Bytecode & Cache của Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 .pytest_cache/
-*.swp
-*.lock
+.ipynb_checkpoints/
+
+# Cache đồ họa Matplotlib
+*/.mpl_cache/
+.mpl_cache/
+
+# Dữ liệu ảnh nặng (Dataset images - Không đẩy lên Git)
+data/raw/
+data/test_frozen/
+data/test_frozen_copy/
+*.jpg
+*.jpeg
+*.png
+# Ngoại lệ: Giữ lại ảnh chụp màn hình bằng chứng UI và biểu đồ báo cáo
+!evidence/screenshots/*.png
+!evidence/*.png
+!reports/*/*.png
+
+# Cho phép file manifest quản lý danh sách ảnh
+!data/manifest.csv
+
+# File trọng số mô hình lớn (Trọng số nộp qua link Google Drive hoặc lưu local)
+*.pt
+*.pth
+*.pkl
+models/*.pt
+
+# Ngoại lệ: Giữ lại các file stats Z-score nhẹ trong models/ để suy luận
+!models/*_stats.npz
+
+# File hệ thống & IDE
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-data/test_frozen_copy/
+*.swp
+*.bak
+
+# Môi trường ảo
+venv/
+.venv/
+env/
