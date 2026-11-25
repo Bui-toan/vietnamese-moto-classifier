@@ -1,0 +1,628 @@
+image_path,label,group_id,bbox,split
+data/processed\Honda Air Blade\ab_017.jpg,Honda Air Blade,honda_air_blade_grp_003,,test
+data/processed\Honda Air Blade\ab_019.jpg,Honda Air Blade,honda_air_blade_grp_004,,test
+data/processed\Honda Air Blade\ab_038.jpg,Honda Air Blade,honda_air_blade_grp_008,,test
+data/processed\Honda Air Blade\ab_050.jpg,Honda Air Blade,honda_air_blade_grp_012,,test
+data/processed\Honda Air Blade\ab_098.jpg,Honda Air Blade,honda_air_blade_grp_012,,test
+data/processed\Honda Air Blade\ab_099.jpg,Honda Air Blade,honda_air_blade_grp_023,,test
+data/processed\Honda Air Blade\ab_113.jpg,Honda Air Blade,honda_air_blade_grp_027,,test
+data/processed\Honda Air Blade\ab_114.jpg,Honda Air Blade,honda_air_blade_grp_027,,test
+data/processed\Honda Air Blade\ab_115.jpg,Honda Air Blade,honda_air_blade_grp_027,,test
+data/processed\Honda Air Blade\ab_116.jpg,Honda Air Blade,honda_air_blade_grp_027,,test
+data/processed\Honda Air Blade\ab_117.jpg,Honda Air Blade,honda_air_blade_grp_027,,test
+data/processed\Honda Air Blade\ab_146.jpg,Honda Air Blade,honda_air_blade_grp_035,,test
+data/processed\Honda Air Blade\ab_147.jpg,Honda Air Blade,honda_air_blade_grp_035,,test
+data/processed\Honda Air Blade\ab_148.jpg,Honda Air Blade,honda_air_blade_grp_035,,test
+data/processed\Honda Air Blade\ab_150.jpg,Honda Air Blade,honda_air_blade_grp_035,,test
+data/processed\Honda Air Blade\ab_152.jpg,Honda Air Blade,honda_air_blade_grp_035,,test
+data/processed\Honda Air Blade\ab_155.jpg,Honda Air Blade,honda_air_blade_grp_003,,test
+data/processed\Honda Air Blade\ab_169.jpg,Honda Air Blade,honda_air_blade_grp_039,,test
+data/processed\Honda Air Blade\ab_178.jpg,Honda Air Blade,honda_air_blade_grp_043,,test
+data/processed\Honda Air Blade\ab_179.jpg,Honda Air Blade,honda_air_blade_grp_043,,test
+data/processed\Honda Air Blade\ab_180.jpg,Honda Air Blade,honda_air_blade_grp_043,,test
+data/processed\Honda Air Blade\ab_181.jpg,Honda Air Blade,honda_air_blade_grp_043,,test
+data/processed\Honda Air Blade\ab_182.jpg,Honda Air Blade,honda_air_blade_grp_043,,test
+data/processed\Honda Air Blade\ab_189.jpg,Honda Air Blade,honda_air_blade_grp_045,,test
+data/processed\Honda Air Blade\ab_190.jpg,Honda Air Blade,honda_air_blade_grp_045,,test
+data/processed\Honda Air Blade\ab_191.jpg,Honda Air Blade,honda_air_blade_grp_045,,test
+data/processed\Honda Air Blade\ab_192.jpg,Honda Air Blade,honda_air_blade_grp_045,,test
+data/processed\Honda Air Blade\ab_193.jpg,Honda Air Blade,honda_air_blade_grp_045,,test
+data/processed\Honda Air Blade\ab_222.jpg,Honda Air Blade,honda_air_blade_grp_008,,test
+data/processed\Honda Air Blade\ab_238.jpg,Honda Air Blade,honda_air_blade_grp_054,,test
+data/processed\Honda Air Blade\ab_239.jpg,Honda Air Blade,honda_air_blade_grp_054,,test
+data/processed\Honda Air Blade\ab_240.jpg,Honda Air Blade,honda_air_blade_grp_054,,test
+data/processed\Honda Air Blade\ab_242.jpg,Honda Air Blade,honda_air_blade_grp_054,,test
+data/processed\Honda Air Blade\ab_243.jpg,Honda Air Blade,honda_air_blade_grp_054,,test
+data/processed\Honda Air Blade\ab_247.jpg,Honda Air Blade,honda_air_blade_grp_023,,test
+data/processed\Honda Air Blade\ab_312.jpg,Honda Air Blade,honda_air_blade_grp_039,,test
+data/processed\Honda Air Blade\ab_322.jpg,Honda Air Blade,honda_air_blade_grp_069,,test
+data/processed\Honda Air Blade\ab_323.jpg,Honda Air Blade,honda_air_blade_grp_069,,test
+data/processed\Honda Air Blade\ab_324.jpg,Honda Air Blade,honda_air_blade_grp_069,,test
+data/processed\Honda Air Blade\ab_325.jpg,Honda Air Blade,honda_air_blade_grp_069,,test
+data/processed\Honda Air Blade\ab_326.jpg,Honda Air Blade,honda_air_blade_grp_069,,test
+data/processed\Honda Air Blade\ab_357.jpg,Honda Air Blade,honda_air_blade_grp_077,,test
+data/processed\Honda Air Blade\ab_358.jpg,Honda Air Blade,honda_air_blade_grp_077,,test
+data/processed\Honda Air Blade\ab_359.jpg,Honda Air Blade,honda_air_blade_grp_077,,test
+data/processed\Honda Air Blade\ab_360.jpg,Honda Air Blade,honda_air_blade_grp_077,,test
+data/processed\Honda Air Blade\ab_361.jpg,Honda Air Blade,honda_air_blade_grp_077,,test
+data/processed\Honda Air Blade\ab_375.jpg,Honda Air Blade,honda_air_blade_grp_081,,test
+data/processed\Honda Air Blade\ab_376.jpg,Honda Air Blade,honda_air_blade_grp_081,,test
+data/processed\Honda Air Blade\ab_377.jpg,Honda Air Blade,honda_air_blade_grp_081,,test
+data/processed\Honda Air Blade\ab_380.jpg,Honda Air Blade,honda_air_blade_grp_081,,test
+data/processed\Honda Air Blade\ab_381.jpg,Honda Air Blade,honda_air_blade_grp_081,,test
+data/processed\Honda Air Blade\ab_387.jpg,Honda Air Blade,honda_air_blade_grp_083,,test
+data/processed\Honda Air Blade\ab_388.jpg,Honda Air Blade,honda_air_blade_grp_083,,test
+data/processed\Honda Air Blade\ab_389.jpg,Honda Air Blade,honda_air_blade_grp_083,,test
+data/processed\Honda Air Blade\ab_390.jpg,Honda Air Blade,honda_air_blade_grp_083,,test
+data/processed\Honda Air Blade\ab_391.jpg,Honda Air Blade,honda_air_blade_grp_083,,test
+data/processed\Honda Air Blade\ab_427.jpg,Honda Air Blade,honda_air_blade_grp_089,,test
+data/processed\Honda Air Blade\ab_462.jpg,Honda Air Blade,honda_air_blade_grp_089,,test
+data/processed\Honda Air Blade\ab_495.jpg,Honda Air Blade,honda_air_blade_grp_004,,test
+data/processed\Honda Air Blade\ab_498.jpg,Honda Air Blade,honda_air_blade_grp_101,,test
+data/processed\Honda Air Blade\ab_499.jpg,Honda Air Blade,honda_air_blade_grp_102,,test
+data/processed\Honda Air Blade\ab_502.jpg,Honda Air Blade,honda_air_blade_grp_104,,test
+data/processed\Honda Air Blade\ab_503.jpg,Honda Air Blade,honda_air_blade_grp_104,,test
+data/processed\Honda Air Blade\ab_506.jpg,Honda Air Blade,honda_air_blade_grp_104,,test
+data/processed\Honda Air Blade\ab_507.jpg,Honda Air Blade,honda_air_blade_grp_104,,test
+data/processed\Honda Air Blade\ab_508.jpg,Honda Air Blade,honda_air_blade_grp_104,,test
+data/processed\Honda Air Blade\ab_513.jpg,Honda Air Blade,honda_air_blade_grp_102,,test
+data/processed\Honda Air Blade\ab_544.jpg,Honda Air Blade,honda_air_blade_grp_101,,test
+data/processed\Honda Air Blade\ab_572.jpg,Honda Air Blade,honda_air_blade_grp_117,,test
+data/processed\Honda Air Blade\ab_573.jpg,Honda Air Blade,honda_air_blade_grp_117,,test
+data/processed\Honda Air Blade\ab_575.jpg,Honda Air Blade,honda_air_blade_grp_117,,test
+data/processed\Honda Air Blade\ab_576.jpg,Honda Air Blade,honda_air_blade_grp_117,,test
+data/processed\Honda Air Blade\ab_577.jpg,Honda Air Blade,honda_air_blade_grp_117,,test
+data/processed\Honda Air Blade\ab_585.jpg,Honda Air Blade,honda_air_blade_grp_119,,test
+data/processed\Honda Air Blade\ab_586.jpg,Honda Air Blade,honda_air_blade_grp_119,,test
+data/processed\Honda Air Blade\ab_587.jpg,Honda Air Blade,honda_air_blade_grp_119,,test
+data/processed\Honda Air Blade\ab_588.jpg,Honda Air Blade,honda_air_blade_grp_119,,test
+data/processed\Honda Air Blade\ab_589.jpg,Honda Air Blade,honda_air_blade_grp_119,,test
+data/processed\Honda Air Blade\ab_590.jpg,Honda Air Blade,honda_air_blade_grp_120,,test
+data/processed\Honda Air Blade\ab_591.jpg,Honda Air Blade,honda_air_blade_grp_120,,test
+data/processed\Honda Air Blade\ab_592.jpg,Honda Air Blade,honda_air_blade_grp_120,,test
+data/processed\Honda Air Blade\ab_593.jpg,Honda Air Blade,honda_air_blade_grp_120,,test
+data/processed\Honda Air Blade\ab_595.jpg,Honda Air Blade,honda_air_blade_grp_120,,test
+data/processed\Honda SH\1795366221201_4472485924792017953_4472485924792017953_c54fe8340641c443571768603dea7932.jpg,Honda SH,honda_sh_grp_005,,test
+data/processed\Honda SH\1795366290877_4472485924792017953_4472485924792017953_4feb8cdec85e07a3dd931bbb2908651b.jpg,Honda SH,honda_sh_grp_007,,test
+data/processed\Honda SH\1795366304511_4472485924792017953_4472485924792017953_c0103d884a184a30dc0f3d7a537bbb63.jpg,Honda SH,honda_sh_grp_007,,test
+data/processed\Honda SH\1795366341394_4472485924792017953_4472485924792017953_8e95ceb6184aded2add306d90017a5b5.jpg,Honda SH,honda_sh_grp_007,,test
+data/processed\Honda SH\1795366350656_4472485924792017953_4472485924792017953_007e9653547dd3903c6049f78209a4d5.jpg,Honda SH,honda_sh_grp_007,,test
+data/processed\Honda SH\1795366357548_4472485924792017953_4472485924792017953_07e5206edeac2c45ea5c295bca69d759.jpg,Honda SH,honda_sh_grp_007,,test
+data/processed\Honda SH\1795366527885_4472485924792017953_4472485924792017953_147ab25ea886a632feb0aa247647d0a0.jpg,Honda SH,honda_sh_grp_009,,test
+data/processed\Honda SH\1795366988075_4472485924792017953_4472485924792017953_f9a225b00ec5f0d19981acc91cf3e907.jpg,Honda SH,honda_sh_grp_020,,test
+data/processed\Honda SH\1795367029388_4472485924792017953_4472485924792017953_894f898313dac3da1ef8208720d03eb2.jpg,Honda SH,honda_sh_grp_020,,test
+data/processed\Honda SH\1795367046693_4472485924792017953_4472485924792017953_2ec84843dd6a942381878ac2ab296832.jpg,Honda SH,honda_sh_grp_020,,test
+data/processed\Honda SH\1795367060233_4472485924792017953_4472485924792017953_fb5fccdd593b2f777916576141ea3e68.jpg,Honda SH,honda_sh_grp_020,,test
+data/processed\Honda SH\1795367082136_4472485924792017953_4472485924792017953_165bc7d180a89ba192d3d1395e4b31c4.jpg,Honda SH,honda_sh_grp_020,,test
+data/processed\Honda SH\1795367450347_4472485924792017953_4472485924792017953_88eb8fdd0cda9e03814b7ec4870eac26.jpg,Honda SH,honda_sh_grp_025,,test
+data/processed\Honda SH\1795367460640_4472485924792017953_4472485924792017953_75c748ef1663a9ae54b534c2b09c96bd.jpg,Honda SH,honda_sh_grp_025,,test
+data/processed\Honda SH\1795367470902_4472485924792017953_4472485924792017953_941b0a19c08dcee0beb0c9194b01e360.jpg,Honda SH,honda_sh_grp_025,,test
+data/processed\Honda SH\1795367516752_4472485924792017953_4472485924792017953_4261138ae39f1e0c18233ef0790d8f61.jpg,Honda SH,honda_sh_grp_025,,test
+data/processed\Honda SH\1795367525064_4472485924792017953_4472485924792017953_815d24fe601ad482c52b9c44816d1571.jpg,Honda SH,honda_sh_grp_025,,test
+data/processed\Honda SH\1795367629373_4472485924792017953_4472485924792017953_28166ed8bc1de2e0979b20ea24475bc1.jpg,Honda SH,honda_sh_grp_028,,test
+data/processed\Honda SH\1795367689073_4472485924792017953_4472485924792017953_60e4b2413b0c4f6e079e604a63593e3c.jpg,Honda SH,honda_sh_grp_009,,test
+data/processed\Honda SH\1795367768941_4472485924792017953_4472485924792017953_47f659c73c599ad76bfad7ea3146ab54.jpg,Honda SH,honda_sh_grp_032,,test
+data/processed\Honda SH\1795368021005_4472485924792017953_4472485924792017953_2a0c72e5fd9f5e5b8a7b4a52b98cb293.jpg,Honda SH,honda_sh_grp_038,,test
+data/processed\Honda SH\1795368028168_4472485924792017953_4472485924792017953_85707d2a6492f887c1a82da9d944c596.jpg,Honda SH,honda_sh_grp_039,,test
+data/processed\Honda SH\1795368048094_4472485924792017953_4472485924792017953_f0064622a087ace20dc9250d3f9d4ec2.jpg,Honda SH,honda_sh_grp_039,,test
+data/processed\Honda SH\1795368057797_4472485924792017953_4472485924792017953_edbc6dd8f8bdaeb626bb0e2b9462af70.jpg,Honda SH,honda_sh_grp_039,,test
+data/processed\Honda SH\1795368080475_4472485924792017953_4472485924792017953_f8b3c2c80a54bb30343ac71612b9efea.jpg,Honda SH,honda_sh_grp_039,,test
+data/processed\Honda SH\1795368088495_4472485924792017953_4472485924792017953_1a311e6a113f0c3f0ee393f2fcf2fa5b.jpg,Honda SH,honda_sh_grp_039,,test
+data/processed\Honda SH\1795368188160_4472485924792017953_4472485924792017953_228d8d3717bab28c7202e88b2330bdc6.jpg,Honda SH,honda_sh_grp_043,,test
+data/processed\Honda SH\1795368197946_4472485924792017953_4472485924792017953_00a64138098a31086f1b031def161c9f.jpg,Honda SH,honda_sh_grp_044,,test
+data/processed\Honda SH\1795368222977_4472485924792017953_4472485924792017953_b82cac5a19403dabb050091683f7c33f.jpg,Honda SH,honda_sh_grp_046,,test
+data/processed\Honda SH\1795368237547_4472485924792017953_4472485924792017953_0760aa0513fbd08176e1fa2efe9041d5.jpg,Honda SH,honda_sh_grp_048,,test
+data/processed\Honda SH\1795368255656_4472485924792017953_4472485924792017953_7e6e444b0b0bab219373f1a90301d532.jpg,Honda SH,honda_sh_grp_068,,test
+data/processed\Honda SH\1795368262927_4472485924792017953_4472485924792017953_a516d7e9984870088804a4a27fbce548.jpg,Honda SH,honda_sh_grp_050,,test
+data/processed\Honda SH\1795368302952_4472485924792017953_4472485924792017953_48ce27bc007a617a1aa8cd61930e2a0e.jpg,Honda SH,honda_sh_grp_052,,test
+data/processed\Honda SH\1795368323874_4472485924792017953_4472485924792017953_745128593caadbe9895aa32e9ed2e935.jpg,Honda SH,honda_sh_grp_054,,test
+data/processed\Honda SH\1795368330621_4472485924792017953_4472485924792017953_4b3987f9e9950c09b965263ecf235db3.jpg,Honda SH,honda_sh_grp_055,,test
+data/processed\Honda SH\1795368401045_4472485924792017953_4472485924792017953_8da3e732a7074f79ac42dc9e2018e3bf.jpg,Honda SH,honda_sh_grp_062,,test
+data/processed\Honda SH\1795368435324_4472485924792017953_4472485924792017953_73288006948444c9efd66acfe55b7d71.jpg,Honda SH,honda_sh_grp_066,,test
+data/processed\Honda SH\1795368468280_42589310786968743_804257677654796569_d0558c1712b93484f1d2c590e2d8af14.jpg,Honda SH,honda_sh_grp_068,,test
+data/processed\Honda SH\1795368471540_42589310786968743_804257677654796569_8e7c28b5c50bae8b822378032699ca5c.jpg,Honda SH,honda_sh_grp_068,,test
+data/processed\Honda SH\1795368477597_42589310786968743_804257677654796569_92664c49b185ed55cc861c66ead05bb1.jpg,Honda SH,honda_sh_grp_068,,test
+data/processed\Honda SH\1795368481036_42589310786968743_804257677654796569_ad5bb7c049f896504bba936a04331fab.jpg,Honda SH,honda_sh_grp_068,,test
+data/processed\Honda SH\1795369058336_4472485924792017953_4472485924792017953_a8fdffa425c77021d4e9c2f9bde6b773.jpg,Honda SH,honda_sh_grp_038,,test
+data/processed\Honda SH\1795369174268_4472485924792017953_4472485924792017953_53897e363ae20f93d794ddfb5f174e5c.jpg,Honda SH,honda_sh_grp_043,,test
+data/processed\Honda SH\1795369183427_4472485924792017953_4472485924792017953_b1387187ff319fdeaea18b3ef2c17577.jpg,Honda SH,honda_sh_grp_044,,test
+data/processed\Honda SH\1795369222486_4472485924792017953_4472485924792017953_65a21fc554714a4b3daf2aae35c549c8.jpg,Honda SH,honda_sh_grp_046,,test
+data/processed\Honda SH\1795369239233_4472485924792017953_4472485924792017953_f580bad4807d05fec6ba28c0febfab10.jpg,Honda SH,honda_sh_grp_048,,test
+data/processed\Honda SH\1795369265778_4472485924792017953_4472485924792017953_a75a7c9a418659f655f4619d833ab699.jpg,Honda SH,honda_sh_grp_050,,test
+data/processed\Honda SH\1795369292458_4472485924792017953_4472485924792017953_23a2dc17ce7bc0526247ab0dcc5459db.jpg,Honda SH,honda_sh_grp_052,,test
+data/processed\Honda SH\1795369320588_4472485924792017953_4472485924792017953_dda2bbd7202ef5544790d296c1214104.jpg,Honda SH,honda_sh_grp_054,,test
+data/processed\Honda SH\1795369326417_4472485924792017953_4472485924792017953_058265a6d87b36817974b3c249e53ead.jpg,Honda SH,honda_sh_grp_055,,test
+data/processed\Honda SH\1795369518286_42589310786968743_804257677654796569_8d9e64a92195c44f5212e96697f3a333.jpg,Honda SH,honda_sh_grp_087,,test
+data/processed\Honda SH\1795369521936_42589310786968743_804257677654796569_93960a8cb383380b117940ddd77ab8a7.jpg,Honda SH,honda_sh_grp_088,,test
+data/processed\Honda SH\1795369525275_42589310786968743_804257677654796569_3b152222bc3cbca0a2be0072c9e84884.jpg,Honda SH,honda_sh_grp_089,,test
+data/processed\Honda SH\1795369529014_42589310786968743_804257677654796569_a43342202acd666ded5b7c8ce14ffd15.jpg,Honda SH,honda_sh_grp_090,,test
+data/processed\Honda SH\1795369536223_42589310786968743_804257677654796569_242d4c64c017e61541b15d4a3a02735f.jpg,Honda SH,honda_sh_grp_092,,test
+data/processed\Honda SH\1795369629305_4472485924792017953_4472485924792017953_2f0f6c5b1da62358f29832013f015090.jpg,Honda SH,honda_sh_grp_062,,test
+data/processed\Honda SH\1795369655203_4472485924792017953_4472485924792017953_c7a46941d0e418f86883d1be9bd991ae.jpg,Honda SH,honda_sh_grp_066,,test
+data/processed\Honda SH\1795369815704_4472485924792017953_4472485924792017953_22072e7216f47a930b1120cc57fff6d5.jpg,Honda SH,honda_sh_grp_099,,test
+data/processed\Honda SH\1795370150898_4472485924792017953_4472485924792017953_32a211fa9a53f7b5040e19da6756d99a.jpg,Honda SH,honda_sh_grp_032,,test
+data/processed\Honda SH\1795370274768_4472485924792017953_4472485924792017953_1b2b3133f8c91fed008baa8300b11f57.jpg,Honda SH,honda_sh_grp_114,,test
+data/processed\Honda SH\1795370291717_4472485924792017953_4472485924792017953_3b77e11a41b761bb2b2a240c91e7d8d0.jpg,Honda SH,honda_sh_grp_114,,test
+data/processed\Honda SH\1795370307520_4472485924792017953_4472485924792017953_46a58b4a04dbd57c2766fa853564cad7.jpg,Honda SH,honda_sh_grp_114,,test
+data/processed\Honda SH\1795370320740_4472485924792017953_4472485924792017953_fe0cb59c0fee0a6fe4bac88554e9ce98.jpg,Honda SH,honda_sh_grp_099,,test
+data/processed\Honda SH\1795370330822_4472485924792017953_4472485924792017953_a93affb50e2101bb50fbbd6b5e2b3efa.jpg,Honda SH,honda_sh_grp_114,,test
+data/processed\Honda SH\1795370344282_4472485924792017953_4472485924792017953_d7066953ffaa8e4afcfc87cfb464761d.jpg,Honda SH,honda_sh_grp_114,,test
+data/processed\Honda SH\1795370460598_4472485924792017953_4472485924792017953_16d41174534315585ae37126de0e5313.jpg,Honda SH,honda_sh_grp_117,,test
+data/processed\Honda SH\1795370478405_4472485924792017953_4472485924792017953_a42fa90fcd17dba2567a0d1664f8a6d5.jpg,Honda SH,honda_sh_grp_117,,test
+data/processed\Honda SH\1795370482887_4472485924792017953_4472485924792017953_1196e9e12d77f7f6999abf111d83a19f.jpg,Honda SH,honda_sh_grp_117,,test
+data/processed\Honda SH\1795370499200_4472485924792017953_4472485924792017953_54a94eccd8c7ad8f5fef5a868a7d33d9.jpg,Honda SH,honda_sh_grp_117,,test
+data/processed\Honda SH\1795370507670_4472485924792017953_4472485924792017953_cde1c1f2620d452ccc8b4a588194ae19.jpg,Honda SH,honda_sh_grp_117,,test
+data/processed\Honda SH\1795370577281_4472485924792017953_4472485924792017953_7a55a627afb5239b0cb67235c3f3dcb1.jpg,Honda SH,honda_sh_grp_048,,test
+data/processed\Honda SH\1795370628269_42589310786968743_804257677654796569_dda5b99906ded978445ce207e980986d.jpg,Honda SH,honda_sh_grp_005,,test
+data/processed\Honda SH\1795370726078_42589310786968743_804257677654796569_0eb9b9a75e6274facf8c62597cb94033.jpg,Honda SH,honda_sh_grp_050,,test
+data/processed\Honda SH\sh_016.jpg,Honda SH,honda_sh_grp_142,,test
+data/processed\Honda SH\sh_017.jpg,Honda SH,honda_sh_grp_142,,test
+data/processed\Honda SH\sh_018.jpg,Honda SH,honda_sh_grp_142,,test
+data/processed\Honda SH\sh_019.jpg,Honda SH,honda_sh_grp_142,,test
+data/processed\Honda SH\sh_020.jpg,Honda SH,honda_sh_grp_142,,test
+data/processed\Honda SH\sh_039.jpg,Honda SH,honda_sh_grp_147,,test
+data/processed\Honda SH\sh_040.jpg,Honda SH,honda_sh_grp_147,,test
+data/processed\Honda SH\sh_041.jpg,Honda SH,honda_sh_grp_147,,test
+data/processed\Honda SH\sh_042.jpg,Honda SH,honda_sh_grp_147,,test
+data/processed\Honda SH\sh_043.jpg,Honda SH,honda_sh_grp_147,,test
+data/processed\Honda SH\sh_055.jpg,Honda SH,honda_sh_grp_151,,test
+data/processed\Honda SH\sh_056.jpg,Honda SH,honda_sh_grp_151,,test
+data/processed\Honda SH\sh_057.jpg,Honda SH,honda_sh_grp_151,,test
+data/processed\Honda SH\sh_058.jpg,Honda SH,honda_sh_grp_151,,test
+data/processed\Honda SH\sh_061.jpg,Honda SH,honda_sh_grp_151,,test
+data/processed\Honda SH\sh_075.jpg,Honda SH,honda_sh_grp_154,,test
+data/processed\Honda SH\sh_076.jpg,Honda SH,honda_sh_grp_154,,test
+data/processed\Honda SH\sh_077.jpg,Honda SH,honda_sh_grp_154,,test
+data/processed\Honda SH\sh_078.jpg,Honda SH,honda_sh_grp_154,,test
+data/processed\Honda SH\sh_080.jpg,Honda SH,honda_sh_grp_154,,test
+data/processed\Honda SH\sh_114.jpg,Honda SH,honda_sh_grp_162,,test
+data/processed\Honda SH\sh_115.jpg,Honda SH,honda_sh_grp_162,,test
+data/processed\Honda SH\sh_116.jpg,Honda SH,honda_sh_grp_162,,test
+data/processed\Honda SH\sh_117.jpg,Honda SH,honda_sh_grp_162,,test
+data/processed\Honda SH\sh_118.jpg,Honda SH,honda_sh_grp_162,,test
+data/processed\Honda SH\sh_137.jpg,Honda SH,honda_sh_grp_166,,test
+data/processed\Honda SH\sh_138.jpg,Honda SH,honda_sh_grp_166,,test
+data/processed\Honda SH\sh_139.jpg,Honda SH,honda_sh_grp_166,,test
+data/processed\Honda SH\sh_141.jpg,Honda SH,honda_sh_grp_166,,test
+data/processed\Honda SH\sh_143.jpg,Honda SH,honda_sh_grp_166,,test
+data/processed\Honda SH\sh_154.jpg,Honda SH,honda_sh_grp_089,,test
+data/processed\Honda SH\sh_161.jpg,Honda SH,honda_sh_grp_171,,test
+data/processed\Honda SH\sh_162.jpg,Honda SH,honda_sh_grp_171,,test
+data/processed\Honda SH\sh_163.jpg,Honda SH,honda_sh_grp_090,,test
+data/processed\Honda SH\sh_164.jpg,Honda SH,honda_sh_grp_171,,test
+data/processed\Honda SH\sh_166.jpg,Honda SH,honda_sh_grp_171,,test
+data/processed\Honda SH\sh_167.jpg,Honda SH,honda_sh_grp_171,,test
+data/processed\Honda SH\sh_168.jpg,Honda SH,honda_sh_grp_173,,test
+data/processed\Honda SH\sh_169.jpg,Honda SH,honda_sh_grp_087,,test
+data/processed\Honda SH\sh_170.jpg,Honda SH,honda_sh_grp_173,,test
+data/processed\Honda SH\sh_172.jpg,Honda SH,honda_sh_grp_173,,test
+data/processed\Honda SH\sh_173.jpg,Honda SH,honda_sh_grp_173,,test
+data/processed\Honda SH\sh_175.jpg,Honda SH,honda_sh_grp_173,,test
+data/processed\Honda SH\sh_176.jpg,Honda SH,honda_sh_grp_092,,test
+data/processed\Honda SH\sh_187.jpg,Honda SH,honda_sh_grp_088,,test
+data/processed\Honda SH\sh_198.jpg,Honda SH,honda_sh_grp_178,,test
+data/processed\Honda SH\sh_199.jpg,Honda SH,honda_sh_grp_178,,test
+data/processed\Honda SH\sh_200.jpg,Honda SH,honda_sh_grp_178,,test
+data/processed\Honda SH\sh_202.jpg,Honda SH,honda_sh_grp_178,,test
+data/processed\Honda SH\sh_203.jpg,Honda SH,honda_sh_grp_178,,test
+data/processed\Honda SH\sh_219.jpg,Honda SH,honda_sh_grp_181,,test
+data/processed\Honda SH\sh_251.jpg,Honda SH,honda_sh_grp_189,,test
+data/processed\Honda SH\sh_252.jpg,Honda SH,honda_sh_grp_189,,test
+data/processed\Honda SH\sh_253.jpg,Honda SH,honda_sh_grp_189,,test
+data/processed\Honda SH\sh_255.jpg,Honda SH,honda_sh_grp_189,,test
+data/processed\Honda SH\sh_256.jpg,Honda SH,honda_sh_grp_189,,test
+data/processed\Honda SH\sh_279.jpg,Honda SH,honda_sh_grp_194,,test
+data/processed\Honda SH\sh_280.jpg,Honda SH,honda_sh_grp_194,,test
+data/processed\Honda SH\sh_281.jpg,Honda SH,honda_sh_grp_194,,test
+data/processed\Honda SH\sh_282.jpg,Honda SH,honda_sh_grp_194,,test
+data/processed\Honda SH\sh_283.jpg,Honda SH,honda_sh_grp_194,,test
+data/processed\Honda SH\sh_287.jpg,Honda SH,honda_sh_grp_195,,test
+data/processed\Honda SH\sh_297.jpg,Honda SH,honda_sh_grp_181,,test
+data/processed\Honda SH\sh_303.jpg,Honda SH,honda_sh_grp_199,,test
+data/processed\Honda SH\sh_304.jpg,Honda SH,honda_sh_grp_199,,test
+data/processed\Honda SH\sh_305.jpg,Honda SH,honda_sh_grp_199,,test
+data/processed\Honda SH\sh_306.jpg,Honda SH,honda_sh_grp_199,,test
+data/processed\Honda SH\sh_307.jpg,Honda SH,honda_sh_grp_199,,test
+data/processed\Honda SH\sh_360.jpg,Honda SH,honda_sh_grp_195,,test
+data/processed\Honda SH\sh_458.jpg,Honda SH,honda_sh_grp_226,,test
+data/processed\Honda SH\sh_474.jpg,Honda SH,honda_sh_grp_230,,test
+data/processed\Honda SH\sh_487.jpg,Honda SH,honda_sh_grp_233,,test
+data/processed\Honda SH\sh_488.jpg,Honda SH,honda_sh_grp_233,,test
+data/processed\Honda SH\sh_489.jpg,Honda SH,honda_sh_grp_233,,test
+data/processed\Honda SH\sh_490.jpg,Honda SH,honda_sh_grp_233,,test
+data/processed\Honda SH\sh_491.jpg,Honda SH,honda_sh_grp_233,,test
+data/processed\Honda SH\sh_497.jpg,Honda SH,honda_sh_grp_235,,test
+data/processed\Honda SH\sh_503.jpg,Honda SH,honda_sh_grp_028,,test
+data/processed\Honda SH\sh_504.jpg,Honda SH,honda_sh_grp_226,,test
+data/processed\Honda SH\sh_505.jpg,Honda SH,honda_sh_grp_237,,test
+data/processed\Honda SH\sh_506.jpg,Honda SH,honda_sh_grp_237,,test
+data/processed\Honda SH\sh_507.jpg,Honda SH,honda_sh_grp_237,,test
+data/processed\Honda SH\sh_508.jpg,Honda SH,honda_sh_grp_237,,test
+data/processed\Honda SH\sh_509.jpg,Honda SH,honda_sh_grp_237,,test
+data/processed\Honda SH\sh_522.jpg,Honda SH,honda_sh_grp_226,,test
+data/processed\Honda SH\sh_525.jpg,Honda SH,honda_sh_grp_230,,test
+data/processed\Honda SH\sh_537.jpg,Honda SH,honda_sh_grp_230,,test
+data/processed\Honda SH\sh_552.jpg,Honda SH,honda_sh_grp_246,,test
+data/processed\Honda SH\sh_553.jpg,Honda SH,honda_sh_grp_246,,test
+data/processed\Honda SH\sh_554.jpg,Honda SH,honda_sh_grp_246,,test
+data/processed\Honda SH\sh_555.jpg,Honda SH,honda_sh_grp_246,,test
+data/processed\Honda SH\sh_556.jpg,Honda SH,honda_sh_grp_246,,test
+data/processed\Honda SH\sh_566.jpg,Honda SH,honda_sh_grp_235,,test
+data/processed\Honda SH\sh_569.jpg,Honda SH,honda_sh_grp_195,,test
+data/processed\Honda Vision\vs_008.jpg,Honda Vision,honda_vision_grp_001,,test
+data/processed\Honda Vision\vs_027.jpg,Honda Vision,honda_vision_grp_006,,test
+data/processed\Honda Vision\vs_028.jpg,Honda Vision,honda_vision_grp_006,,test
+data/processed\Honda Vision\vs_029.jpg,Honda Vision,honda_vision_grp_006,,test
+data/processed\Honda Vision\vs_030.jpg,Honda Vision,honda_vision_grp_006,,test
+data/processed\Honda Vision\vs_031.jpg,Honda Vision,honda_vision_grp_006,,test
+data/processed\Honda Vision\vs_032.jpg,Honda Vision,honda_vision_grp_007,,test
+data/processed\Honda Vision\vs_033.jpg,Honda Vision,honda_vision_grp_007,,test
+data/processed\Honda Vision\vs_034.jpg,Honda Vision,honda_vision_grp_007,,test
+data/processed\Honda Vision\vs_035.jpg,Honda Vision,honda_vision_grp_007,,test
+data/processed\Honda Vision\vs_036.jpg,Honda Vision,honda_vision_grp_007,,test
+data/processed\Honda Vision\vs_047.jpg,Honda Vision,honda_vision_grp_010,,test
+data/processed\Honda Vision\vs_055.jpg,Honda Vision,honda_vision_grp_015,,test
+data/processed\Honda Vision\vs_057.jpg,Honda Vision,honda_vision_grp_015,,test
+data/processed\Honda Vision\vs_058.jpg,Honda Vision,honda_vision_grp_015,,test
+data/processed\Honda Vision\vs_059.jpg,Honda Vision,honda_vision_grp_015,,test
+data/processed\Honda Vision\vs_060.jpg,Honda Vision,honda_vision_grp_015,,test
+data/processed\Honda Vision\vs_072.jpg,Honda Vision,honda_vision_grp_019,,test
+data/processed\Honda Vision\vs_074.jpg,Honda Vision,honda_vision_grp_019,,test
+data/processed\Honda Vision\vs_075.jpg,Honda Vision,honda_vision_grp_019,,test
+data/processed\Honda Vision\vs_076.jpg,Honda Vision,honda_vision_grp_019,,test
+data/processed\Honda Vision\vs_078.jpg,Honda Vision,honda_vision_grp_019,,test
+data/processed\Honda Vision\vs_089.jpg,Honda Vision,honda_vision_grp_022,,test
+data/processed\Honda Vision\vs_090.jpg,Honda Vision,honda_vision_grp_022,,test
+data/processed\Honda Vision\vs_091.jpg,Honda Vision,honda_vision_grp_022,,test
+data/processed\Honda Vision\vs_092.jpg,Honda Vision,honda_vision_grp_022,,test
+data/processed\Honda Vision\vs_093.jpg,Honda Vision,honda_vision_grp_022,,test
+data/processed\Honda Vision\vs_107.jpg,Honda Vision,honda_vision_grp_025,,test
+data/processed\Honda Vision\vs_138.jpg,Honda Vision,honda_vision_grp_001,,test
+data/processed\Honda Vision\vs_141.jpg,Honda Vision,honda_vision_grp_033,,test
+data/processed\Honda Vision\vs_142.jpg,Honda Vision,honda_vision_grp_033,,test
+data/processed\Honda Vision\vs_143.jpg,Honda Vision,honda_vision_grp_033,,test
+data/processed\Honda Vision\vs_144.jpg,Honda Vision,honda_vision_grp_033,,test
+data/processed\Honda Vision\vs_145.jpg,Honda Vision,honda_vision_grp_033,,test
+data/processed\Honda Vision\vs_151.jpg,Honda Vision,honda_vision_grp_035,,test
+data/processed\Honda Vision\vs_152.jpg,Honda Vision,honda_vision_grp_035,,test
+data/processed\Honda Vision\vs_153.jpg,Honda Vision,honda_vision_grp_035,,test
+data/processed\Honda Vision\vs_154.jpg,Honda Vision,honda_vision_grp_035,,test
+data/processed\Honda Vision\vs_155.jpg,Honda Vision,honda_vision_grp_035,,test
+data/processed\Honda Vision\vs_161.jpg,Honda Vision,honda_vision_grp_037,,test
+data/processed\Honda Vision\vs_162.jpg,Honda Vision,honda_vision_grp_037,,test
+data/processed\Honda Vision\vs_163.jpg,Honda Vision,honda_vision_grp_037,,test
+data/processed\Honda Vision\vs_164.jpg,Honda Vision,honda_vision_grp_037,,test
+data/processed\Honda Vision\vs_165.jpg,Honda Vision,honda_vision_grp_037,,test
+data/processed\Honda Vision\vs_179.jpg,Honda Vision,honda_vision_grp_040,,test
+data/processed\Honda Vision\vs_193.jpg,Honda Vision,honda_vision_grp_045,,test
+data/processed\Honda Vision\vs_194.jpg,Honda Vision,honda_vision_grp_045,,test
+data/processed\Honda Vision\vs_195.jpg,Honda Vision,honda_vision_grp_045,,test
+data/processed\Honda Vision\vs_196.jpg,Honda Vision,honda_vision_grp_045,,test
+data/processed\Honda Vision\vs_197.jpg,Honda Vision,honda_vision_grp_045,,test
+data/processed\Honda Vision\vs_214.jpg,Honda Vision,honda_vision_grp_050,,test
+data/processed\Honda Vision\vs_215.jpg,Honda Vision,honda_vision_grp_050,,test
+data/processed\Honda Vision\vs_216.jpg,Honda Vision,honda_vision_grp_050,,test
+data/processed\Honda Vision\vs_217.jpg,Honda Vision,honda_vision_grp_050,,test
+data/processed\Honda Vision\vs_218.jpg,Honda Vision,honda_vision_grp_050,,test
+data/processed\Honda Vision\vs_234.jpg,Honda Vision,honda_vision_grp_054,,test
+data/processed\Honda Vision\vs_235.jpg,Honda Vision,honda_vision_grp_054,,test
+data/processed\Honda Vision\vs_236.jpg,Honda Vision,honda_vision_grp_054,,test
+data/processed\Honda Vision\vs_237.jpg,Honda Vision,honda_vision_grp_054,,test
+data/processed\Honda Vision\vs_238.jpg,Honda Vision,honda_vision_grp_054,,test
+data/processed\Honda Vision\vs_259.jpg,Honda Vision,honda_vision_grp_059,,test
+data/processed\Honda Vision\vs_260.jpg,Honda Vision,honda_vision_grp_059,,test
+data/processed\Honda Vision\vs_261.jpg,Honda Vision,honda_vision_grp_059,,test
+data/processed\Honda Vision\vs_262.jpg,Honda Vision,honda_vision_grp_059,,test
+data/processed\Honda Vision\vs_263.jpg,Honda Vision,honda_vision_grp_059,,test
+data/processed\Honda Vision\vs_276.jpg,Honda Vision,honda_vision_grp_062,,test
+data/processed\Honda Vision\vs_325.jpg,Honda Vision,honda_vision_grp_073,,test
+data/processed\Honda Vision\vs_326.jpg,Honda Vision,honda_vision_grp_073,,test
+data/processed\Honda Vision\vs_327.jpg,Honda Vision,honda_vision_grp_073,,test
+data/processed\Honda Vision\vs_328.jpg,Honda Vision,honda_vision_grp_073,,test
+data/processed\Honda Vision\vs_329.jpg,Honda Vision,honda_vision_grp_073,,test
+data/processed\Honda Vision\vs_342.jpg,Honda Vision,honda_vision_grp_025,,test
+data/processed\Honda Vision\vs_417.jpg,Honda Vision,honda_vision_grp_001,,test
+data/processed\Honda Vision\vs_425.jpg,Honda Vision,honda_vision_grp_093,,test
+data/processed\Honda Vision\vs_426.jpg,Honda Vision,honda_vision_grp_093,,test
+data/processed\Honda Vision\vs_427.jpg,Honda Vision,honda_vision_grp_093,,test
+data/processed\Honda Vision\vs_428.jpg,Honda Vision,honda_vision_grp_093,,test
+data/processed\Honda Vision\vs_429.jpg,Honda Vision,honda_vision_grp_093,,test
+data/processed\Honda Vision\vs_479.jpg,Honda Vision,honda_vision_grp_010,,test
+data/processed\Honda Vision\vs_481.jpg,Honda Vision,honda_vision_grp_104,,test
+data/processed\Honda Vision\vs_482.jpg,Honda Vision,honda_vision_grp_104,,test
+data/processed\Honda Vision\vs_483.jpg,Honda Vision,honda_vision_grp_104,,test
+data/processed\Honda Vision\vs_484.jpg,Honda Vision,honda_vision_grp_104,,test
+data/processed\Honda Vision\vs_485.jpg,Honda Vision,honda_vision_grp_104,,test
+data/processed\Honda Vision\vs_516.jpg,Honda Vision,honda_vision_grp_111,,test
+data/processed\Honda Vision\vs_517.jpg,Honda Vision,honda_vision_grp_111,,test
+data/processed\Honda Vision\vs_518.jpg,Honda Vision,honda_vision_grp_111,,test
+data/processed\Honda Vision\vs_519.jpg,Honda Vision,honda_vision_grp_111,,test
+data/processed\Honda Vision\vs_520.jpg,Honda Vision,honda_vision_grp_111,,test
+data/processed\Honda Vision\vs_531.jpg,Honda Vision,honda_vision_grp_114,,test
+data/processed\Honda Vision\vs_532.jpg,Honda Vision,honda_vision_grp_062,,test
+data/processed\Honda Vision\vs_533.jpg,Honda Vision,honda_vision_grp_114,,test
+data/processed\Honda Vision\vs_534.jpg,Honda Vision,honda_vision_grp_114,,test
+data/processed\Honda Vision\vs_535.jpg,Honda Vision,honda_vision_grp_114,,test
+data/processed\Honda Vision\vs_536.jpg,Honda Vision,honda_vision_grp_114,,test
+data/processed\Honda Vision\vs_552.jpg,Honda Vision,honda_vision_grp_118,,test
+data/processed\Honda Vision\vs_553.jpg,Honda Vision,honda_vision_grp_118,,test
+data/processed\Honda Vision\vs_554.jpg,Honda Vision,honda_vision_grp_118,,test
+data/processed\Honda Vision\vs_555.jpg,Honda Vision,honda_vision_grp_118,,test
+data/processed\Honda Vision\vs_556.jpg,Honda Vision,honda_vision_grp_118,,test
+data/processed\Honda Vision\vs_593.jpg,Honda Vision,honda_vision_grp_126,,test
+data/processed\Honda Vision\vs_594.jpg,Honda Vision,honda_vision_grp_126,,test
+data/processed\Honda Vision\vs_595.jpg,Honda Vision,honda_vision_grp_126,,test
+data/processed\Honda Vision\vs_596.jpg,Honda Vision,honda_vision_grp_126,,test
+data/processed\Honda Vision\vs_597.jpg,Honda Vision,honda_vision_grp_126,,test
+data/processed\Honda Vision\vs_633.jpg,Honda Vision,honda_vision_grp_040,,test
+data/processed\Honda Wave\1795356859078_42589310786968743_804257677654796569_6b4241b6e3a3d768caaee0322787e0b8.jpg,Honda Wave,honda_wave_grp_002,,test
+data/processed\Honda Wave\1795357095672_42589310786968743_804257677654796569_933151a15b77ce1977ed813baab6e0c2.jpg,Honda Wave,honda_wave_grp_002,,test
+data/processed\Honda Wave\1795357108498_42589310786968743_804257677654796569_a18bb09a9ebdecb255905913e06b368f.jpg,Honda Wave,honda_wave_grp_012,,test
+data/processed\Honda Wave\1795357112755_42589310786968743_804257677654796569_487a59fd65acee23fe091a103b1feb98.jpg,Honda Wave,honda_wave_grp_013,,test
+data/processed\Honda Wave\1795357203757_42589310786968743_804257677654796569_7163477e68ade558e82f5b8ef72b7cef.jpg,Honda Wave,honda_wave_grp_012,,test
+data/processed\Honda Wave\1795357235743_42589310786968743_804257677654796569_4a25da5fff6a9fd441fc47e084fe2bba.jpg,Honda Wave,honda_wave_grp_020,,test
+data/processed\Honda Wave\1795357239645_42589310786968743_804257677654796569_4e648539460724cc2a272acd9dd6d912.jpg,Honda Wave,honda_wave_grp_020,,test
+data/processed\Honda Wave\1795357247767_42589310786968743_804257677654796569_8d7f5bfac7072515339c9bcc43e23823.jpg,Honda Wave,honda_wave_grp_020,,test
+data/processed\Honda Wave\1795357251909_42589310786968743_804257677654796569_72a60280cde5998b635e2f3ff49f9d94.jpg,Honda Wave,honda_wave_grp_020,,test
+data/processed\Honda Wave\1795357255328_42589310786968743_804257677654796569_be15e992279f5e11dc487c681c68aa20.jpg,Honda Wave,honda_wave_grp_020,,test
+data/processed\Honda Wave\1795357270354_42589310786968743_804257677654796569_38e6f246ca2708da9b4f85fc7d43952e.jpg,Honda Wave,honda_wave_grp_021,,test
+data/processed\Honda Wave\1795357687622_42589310786968743_804257677654796569_ef5201e59a4c22e43f350bbc123c9ab8.jpg,Honda Wave,honda_wave_grp_013,,test
+data/processed\Honda Wave\1795357760235_42589310786968743_804257677654796569_48a2882415490048c0ce1bb2643cf658.jpg,Honda Wave,honda_wave_grp_012,,test
+data/processed\Honda Wave\1795357926378_42589310786968743_804257677654796569_8b5d81b27292ff826462288b46da201c.jpg,Honda Wave,honda_wave_grp_002,,test
+data/processed\Honda Wave\1795358005372_42589310786968743_804257677654796569_cfe0188d6d2f015de3bd3328a763ca1c.jpg,Honda Wave,honda_wave_grp_021,,test
+data/processed\Honda Wave\1795358086758_42589310786968743_804257677654796569_582c75b67a6802bc927734cd5582f310.jpg,Honda Wave,honda_wave_grp_033,,test
+data/processed\Honda Wave\1795358135152_42589310786968743_804257677654796569_685426aa82f14ff91d19be003f81a84c.jpg,Honda Wave,honda_wave_grp_013,,test
+data/processed\Honda Wave\1795358457444_42589310786968743_804257677654796569_a1dff6872aba25332fafb22e16d235ba.jpg,Honda Wave,honda_wave_grp_033,,test
+data/processed\Honda Wave\1795358477056_42589310786968743_804257677654796569_77f926faedb9fe200be079768a8fc824.jpg,Honda Wave,honda_wave_grp_012,,test
+data/processed\Honda Wave\1795362404596_42589310786968743_804257677654796569_a3420a89d5305801276b6f5a3fd33e00.jpg,Honda Wave,honda_wave_grp_053,,test
+data/processed\Honda Wave\1795362407906_42589310786968743_804257677654796569_3591134f59e21d4516abeb17d1bcd363.jpg,Honda Wave,honda_wave_grp_053,,test
+data/processed\Honda Wave\1795362411079_42589310786968743_804257677654796569_d411f104f142c3b3dd64679708e3cc6d.jpg,Honda Wave,honda_wave_grp_053,,test
+data/processed\Honda Wave\1795362421836_42589310786968743_804257677654796569_6374ab67bb33a9ea07d38ee1557a5f4d.jpg,Honda Wave,honda_wave_grp_053,,test
+data/processed\Honda Wave\1795362425430_42589310786968743_804257677654796569_1d8c2628616f2a70faeb186a121da6a2.jpg,Honda Wave,honda_wave_grp_053,,test
+data/processed\Honda Wave\1795362429003_42589310786968743_804257677654796569_e70173aef80ff75b3a52a007ee085454.jpg,Honda Wave,honda_wave_grp_054,,test
+data/processed\Honda Wave\1795362432386_42589310786968743_804257677654796569_40d2039a77886a5f5d8148ab456591af.jpg,Honda Wave,honda_wave_grp_054,,test
+data/processed\Honda Wave\1795362447019_42589310786968743_804257677654796569_ec361fba8e9b5cc2e2b6b8615f362d71.jpg,Honda Wave,honda_wave_grp_054,,test
+data/processed\Honda Wave\1795362461297_42589310786968743_804257677654796569_59755cab66dabaf484d911220a994807.jpg,Honda Wave,honda_wave_grp_054,,test
+data/processed\Honda Wave\1795362464576_42589310786968743_804257677654796569_498a6581b08414d82311daa8f2da5e1d.jpg,Honda Wave,honda_wave_grp_054,,test
+data/processed\Honda Wave\1795362790117_42589310786968743_804257677654796569_a3b2f92f17ee798814582f4f9e9d98da.jpg,Honda Wave,honda_wave_grp_064,,test
+data/processed\Honda Wave\1795362793846_42589310786968743_804257677654796569_fca003283b466ca4494babe14a696969.jpg,Honda Wave,honda_wave_grp_064,,test
+data/processed\Honda Wave\1795363006054_42589310786968743_804257677654796569_ac581916dc745da4d73217c5150ce7fa.jpg,Honda Wave,honda_wave_grp_064,,test
+data/processed\Honda Wave\1795363013225_42589310786968743_804257677654796569_ae289cb2c579650cce14b83686b74909.jpg,Honda Wave,honda_wave_grp_064,,test
+data/processed\Honda Wave\1795363017179_42589310786968743_804257677654796569_e62dc1d81df4a6570aed87dc04de21dd.jpg,Honda Wave,honda_wave_grp_064,,test
+data/processed\Honda Wave\1795363047634_42589310786968743_804257677654796569_7976c49df35617fda9660693fb200859.jpg,Honda Wave,honda_wave_grp_065,,test
+data/processed\Honda Wave\1795363073023_42589310786968743_804257677654796569_d62725f47c40bc089a31bf7b81e72e1c.jpg,Honda Wave,honda_wave_grp_065,,test
+data/processed\Honda Wave\1795365643497_42589310786968743_804257677654796569_3782904f9f117a8e082bb89f720e6499.jpg,Honda Wave,honda_wave_grp_069,,test
+data/processed\Honda Wave\1795365648668_42589310786968743_804257677654796569_7c4b874c758cab61922507b6137b8f28.jpg,Honda Wave,honda_wave_grp_069,,test
+data/processed\Honda Wave\1795365655073_42589310786968743_804257677654796569_6998cc0c45bff8826330d2e689b4ea74.jpg,Honda Wave,honda_wave_grp_069,,test
+data/processed\Honda Wave\1795365658393_42589310786968743_804257677654796569_322b2ed62b4014f9f252545667dc6cd0.jpg,Honda Wave,honda_wave_grp_069,,test
+data/processed\Honda Wave\1795365662313_42589310786968743_804257677654796569_d807f1f9893ae7c3b8855dde8d20c0b1.jpg,Honda Wave,honda_wave_grp_069,,test
+data/processed\Honda Wave\1795365765953_42589310786968743_804257677654796569_38c14b6c631c24acf0658f87ec139e50.jpg,Honda Wave,honda_wave_grp_071,,test
+data/processed\Honda Wave\1795365771178_42589310786968743_804257677654796569_1a0604465fd1233d1be97c186c79f565.jpg,Honda Wave,honda_wave_grp_071,,test
+data/processed\Honda Wave\1795365775645_42589310786968743_804257677654796569_dd8036c05629dc23161bbb64c8d0f492.jpg,Honda Wave,honda_wave_grp_071,,test
+data/processed\Honda Wave\1795365779166_42589310786968743_804257677654796569_7a3764ef3e45ff3c70e466c36f667680.jpg,Honda Wave,honda_wave_grp_071,,test
+data/processed\Honda Wave\1795365793427_42589310786968743_804257677654796569_4eb658b28aa63764cec2b43035870605.jpg,Honda Wave,honda_wave_grp_071,,test
+data/processed\Honda Wave\1795366838054_42589310786968743_804257677654796569_25c1aef41439be748516554f51a82a52.jpg,Honda Wave,honda_wave_grp_081,,test
+data/processed\Honda Wave\1795366841504_42589310786968743_804257677654796569_d5a7b2748b9d5e84cb18f2e430da2fa5.jpg,Honda Wave,honda_wave_grp_081,,test
+data/processed\Honda Wave\1795366851270_42589310786968743_804257677654796569_4d8a0169ceefa9aacd4e3d0653296776.jpg,Honda Wave,honda_wave_grp_081,,test
+data/processed\Honda Wave\1795366858921_42589310786968743_804257677654796569_1e662371dffec9d88057af727b0397f8.jpg,Honda Wave,honda_wave_grp_081,,test
+data/processed\Honda Wave\1795366862538_42589310786968743_804257677654796569_3c9ce72fd1417dd1454b72e1d5ef7023.jpg,Honda Wave,honda_wave_grp_081,,test
+data/processed\Honda Wave\1795366866419_42589310786968743_804257677654796569_633fa378602e4f7ea74fe8e46f061c61.jpg,Honda Wave,honda_wave_grp_083,,test
+data/processed\Honda Wave\1795366917676_42589310786968743_804257677654796569_d929b174675704d574debe5d525b9e16.jpg,Honda Wave,honda_wave_grp_083,,test
+data/processed\Honda Wave\1795366925333_42589310786968743_804257677654796569_ca45c4160c2d413ee1b086a24dfb86eb.jpg,Honda Wave,honda_wave_grp_083,,test
+data/processed\Honda Wave\1795366957638_42589310786968743_804257677654796569_a9714ea9cda0fa6c217b661de1260e52.jpg,Honda Wave,honda_wave_grp_083,,test
+data/processed\Honda Wave\1795366961195_42589310786968743_804257677654796569_21685907e399214f24cd430ae87e2b81.jpg,Honda Wave,honda_wave_grp_083,,test
+data/processed\Honda Wave\1795366988153_42589310786968743_804257677654796569_3e7e20021f9d973bd6781b45c33d94bd.jpg,Honda Wave,honda_wave_grp_085,,test
+data/processed\Honda Wave\1795366991630_42589310786968743_804257677654796569_f8a3cb61181f3fd58e701a2e3640c352.jpg,Honda Wave,honda_wave_grp_085,,test
+data/processed\Honda Wave\1795366994986_42589310786968743_804257677654796569_60d7946fa09d21a68f44190ff2c191aa.jpg,Honda Wave,honda_wave_grp_085,,test
+data/processed\Honda Wave\1795367011325_42589310786968743_804257677654796569_7094c1825ff5e49610501d8dc6b5f55b.jpg,Honda Wave,honda_wave_grp_085,,test
+data/processed\Honda Wave\1795367014891_42589310786968743_804257677654796569_30046651cbfba1e3603ff288d4bf9cbc.jpg,Honda Wave,honda_wave_grp_085,,test
+data/processed\Honda Wave\1795367530490_42589310786968743_804257677654796569_7612c6221ff5f0e03ace1c85a80f3974.jpg,Honda Wave,honda_wave_grp_094,,test
+data/processed\Honda Wave\1795367546471_42589310786968743_804257677654796569_b2b500afacbbeedc5ef979b54d9757f9.jpg,Honda Wave,honda_wave_grp_094,,test
+data/processed\Honda Wave\1795367549990_42589310786968743_804257677654796569_cf87081a6155ba2c3b57170653037ced.jpg,Honda Wave,honda_wave_grp_094,,test
+data/processed\Honda Wave\1795367553456_42589310786968743_804257677654796569_49087871dedce1469409610d8046eee6.jpg,Honda Wave,honda_wave_grp_094,,test
+data/processed\Honda Wave\1795367556854_42589310786968743_804257677654796569_8fe0a7ebc4cebd5de217bcf477a297aa.jpg,Honda Wave,honda_wave_grp_094,,test
+data/processed\Honda Wave\1795367897724_42589310786968743_804257677654796569_ff1766c83837a94e9834f38bc895bde1.jpg,Honda Wave,honda_wave_grp_105,,test
+data/processed\Honda Wave\1795367901211_42589310786968743_804257677654796569_377b18a9514a8b6425719a76aa830517.jpg,Honda Wave,honda_wave_grp_105,,test
+data/processed\Honda Wave\1795367904961_42589310786968743_804257677654796569_1838db938269a34ff1d4e15385cee0b2.jpg,Honda Wave,honda_wave_grp_105,,test
+data/processed\Honda Wave\1795367908509_42589310786968743_804257677654796569_067b099ac15414cff1531f6a1f00d844.jpg,Honda Wave,honda_wave_grp_105,,test
+data/processed\Honda Wave\1795367912399_42589310786968743_804257677654796569_e88a063cb81c7b5bc92f051e238d3eda.jpg,Honda Wave,honda_wave_grp_105,,test
+data/processed\Honda Wave\1795367923462_42589310786968743_804257677654796569_9ca1e0ece5f8b04b8e185b02608ba58a.jpg,Honda Wave,honda_wave_grp_106,,test
+data/processed\Honda Wave\1795367926993_42589310786968743_804257677654796569_b16918235f51f0278345d0e0f78fda9c.jpg,Honda Wave,honda_wave_grp_106,,test
+data/processed\Honda Wave\1795367930809_42589310786968743_804257677654796569_5a2b5f53eb2e3585c9c46dc4137791ec.jpg,Honda Wave,honda_wave_grp_106,,test
+data/processed\Honda Wave\1795367941502_42589310786968743_804257677654796569_0e1fdec82f8ab4ee2a32eac37f659b6e.jpg,Honda Wave,honda_wave_grp_106,,test
+data/processed\Honda Wave\1795367963742_42589310786968743_804257677654796569_78a5429cb3657239e5d7a9ac0fc739c8.jpg,Honda Wave,honda_wave_grp_106,,test
+data/processed\Honda Wave\1795368321474_42589310786968743_804257677654796569_8b7281c7b30c929c85db1e55b1c491cf.jpg,Honda Wave,honda_wave_grp_116,,test
+data/processed\Honda Wave\1795368324621_42589310786968743_804257677654796569_d11aa231fce8d5c03e84521edee95f16.jpg,Honda Wave,honda_wave_grp_116,,test
+data/processed\Honda Wave\Screenshot 2026-11-22 210658.png,Honda Wave,honda_wave_grp_116,,test
+data/processed\Honda Wave\Screenshot 2026-11-22 210735.png,Honda Wave,honda_wave_grp_116,,test
+data/processed\Honda Wave\Screenshot 2026-11-22 210758.png,Honda Wave,honda_wave_grp_116,,test
+data/processed\Honda Wave\Screenshot 2026-11-22 210942.png,Honda Wave,honda_wave_grp_119,,test
+data/processed\Piaggio Vespa\1795422832987_2667285004632436227_2667285004632436227_dc71fc275a2e13811e4c9814316e6c80.jpg,Piaggio Vespa,piaggio_vespa_grp_003,,test
+data/processed\Piaggio Vespa\1795422833050_2667285004632436227_2667285004632436227_73d94864a47096d999fa03fa858d7efa.jpg,Piaggio Vespa,piaggio_vespa_grp_006,,test
+data/processed\Piaggio Vespa\1795422833062_2667285004632436227_2667285004632436227_b0dbbbbcff074014ef4a1a8eb23f753c.jpg,Piaggio Vespa,piaggio_vespa_grp_008,,test
+data/processed\Piaggio Vespa\1795422965537_2667285004632436227_2667285004632436227_ba5749c7897ee79ba660eb3cbbc84ba7.jpg,Piaggio Vespa,piaggio_vespa_grp_011,,test
+data/processed\Piaggio Vespa\1795422965543_2667285004632436227_2667285004632436227_e8d86ec4186b192b6f6628256b80e28d.jpg,Piaggio Vespa,piaggio_vespa_grp_011,,test
+data/processed\Piaggio Vespa\904506966_1932863697693410_1703759299853047478_n.jpg,Piaggio Vespa,piaggio_vespa_grp_022,,test
+data/processed\Piaggio Vespa\905204378_122139798567472130_2934739058162291996_n.jpg,Piaggio Vespa,piaggio_vespa_grp_022,,test
+data/processed\Piaggio Vespa\905282710_1932863874360059_6025957938298055490_n.jpg,Piaggio Vespa,piaggio_vespa_grp_022,,test
+data/processed\Piaggio Vespa\905460302_3738671712954674_125968207422805889_n.jpg,Piaggio Vespa,piaggio_vespa_grp_022,,test
+data/processed\Piaggio Vespa\905686898_3738671672954678_1909308725372330142_n.jpg,Piaggio Vespa,piaggio_vespa_grp_020,,test
+data/processed\Piaggio Vespa\905735712_122139800079472130_3553924258710122583_n.jpg,Piaggio Vespa,piaggio_vespa_grp_022,,test
+data/processed\Piaggio Vespa\906809208_3739356276219551_4175244397548040719_n.jpg,Piaggio Vespa,piaggio_vespa_grp_025,,test
+data/processed\Piaggio Vespa\908531839_1802348124384563_3974707299449814253_n.jpg,Piaggio Vespa,piaggio_vespa_grp_037,,test
+data/processed\Piaggio Vespa\909182859_2601250427063080_7143369411193004023_n.jpg,Piaggio Vespa,piaggio_vespa_grp_038,,test
+data/processed\Piaggio Vespa\909704568_3595387447305062_4228365926686615747_n.jpg,Piaggio Vespa,piaggio_vespa_grp_042,,test
+data/processed\Piaggio Vespa\910173013_4142704992698428_8304203589963150037_n.jpg,Piaggio Vespa,piaggio_vespa_grp_044,,test
+data/processed\Piaggio Vespa\910233026_4656068987958776_6791105836918388647_n.jpg,Piaggio Vespa,piaggio_vespa_grp_008,,test
+data/processed\Piaggio Vespa\910365463_4655712004661141_3653905943137098094_n.jpg,Piaggio Vespa,piaggio_vespa_grp_045,,test
+data/processed\Piaggio Vespa\910469828_3741732132648632_7681891094611865438_n.jpg,Piaggio Vespa,piaggio_vespa_grp_047,,test
+data/processed\Piaggio Vespa\910469999_3744282089060303_466852952021959924_n.jpg,Piaggio Vespa,piaggio_vespa_grp_025,,test
+data/processed\Piaggio Vespa\910886629_3596553790521761_5374145218585866724_n.jpg,Piaggio Vespa,piaggio_vespa_grp_055,,test
+data/processed\Piaggio Vespa\910908982_959826970288387_3359165992511195516_n.jpg,Piaggio Vespa,piaggio_vespa_grp_055,,test
+data/processed\Piaggio Vespa\910908994_10164263815043026_8550376065506930417_n.jpg,Piaggio Vespa,piaggio_vespa_grp_055,,test
+data/processed\Piaggio Vespa\910925991_4734578166763475_7959008247762979149_n.jpg,Piaggio Vespa,piaggio_vespa_grp_055,,test
+data/processed\Piaggio Vespa\910929903_3559470737554380_7870317361952699281_n.jpg,Piaggio Vespa,piaggio_vespa_grp_055,,test
+data/processed\Piaggio Vespa\910981174_2788311401565688_1221031509655495091_n.jpg,Piaggio Vespa,piaggio_vespa_grp_057,,test
+data/processed\Piaggio Vespa\910983873_3739356379552874_312568278734651465_n.jpg,Piaggio Vespa,piaggio_vespa_grp_057,,test
+data/processed\Piaggio Vespa\910984206_1021434940316997_4951256725867858471_n.jpg,Piaggio Vespa,piaggio_vespa_grp_057,,test
+data/processed\Piaggio Vespa\911054882_10164263814533026_3137846615593085915_n.jpg,Piaggio Vespa,piaggio_vespa_grp_057,,test
+data/processed\Piaggio Vespa\911065902_122207182694832957_3345024398053273108_n.jpg,Piaggio Vespa,piaggio_vespa_grp_057,,test
+data/processed\Piaggio Vespa\911499039_4658689541030054_8615269220319023821_n.jpg,Piaggio Vespa,piaggio_vespa_grp_063,,test
+data/processed\Piaggio Vespa\911665105_122478884792001685_8274681640284320890_n.jpg,Piaggio Vespa,piaggio_vespa_grp_045,,test
+data/processed\Piaggio Vespa\911695346_10164263815293026_1802657505527524568_n.jpg,Piaggio Vespa,piaggio_vespa_grp_068,,test
+data/processed\Piaggio Vespa\911711768_122139799227472130_1461126069306068553_n.jpg,Piaggio Vespa,piaggio_vespa_grp_068,,test
+data/processed\Piaggio Vespa\911713663_3596553667188440_1067899175127348555_n.jpg,Piaggio Vespa,piaggio_vespa_grp_068,,test
+data/processed\Piaggio Vespa\911721874_1805211360764906_246072504437479158_n.jpg,Piaggio Vespa,piaggio_vespa_grp_068,,test
+data/processed\Piaggio Vespa\911773936_1901803957926391_1278011957742337975_n.jpg,Piaggio Vespa,piaggio_vespa_grp_068,,test
+data/processed\Piaggio Vespa\911814599_1116799231152333_5467217529269267254_n.jpg,Piaggio Vespa,piaggio_vespa_grp_069,,test
+data/processed\Piaggio Vespa\911814614_1118256837673239_7645270079898533487_n.jpg,Piaggio Vespa,piaggio_vespa_grp_071,,test
+data/processed\Piaggio Vespa\911853006_1118257364339853_1114547170173615808_n.jpg,Piaggio Vespa,piaggio_vespa_grp_071,,test
+data/processed\Piaggio Vespa\911884554_2269831563597737_7144389601532314611_n.jpg,Piaggio Vespa,piaggio_vespa_grp_071,,test
+data/processed\Piaggio Vespa\911884735_3596553777188429_4182011516352634887_n.jpg,Piaggio Vespa,piaggio_vespa_grp_071,,test
+data/processed\Piaggio Vespa\911918747_1850260149312635_9073084999195144351_n.jpg,Piaggio Vespa,piaggio_vespa_grp_071,,test
+data/processed\Piaggio Vespa\912569795_3595387657305041_8245035932575651831_n.jpg,Piaggio Vespa,piaggio_vespa_grp_082,,test
+data/processed\Piaggio Vespa\912982814_122315473406217773_2615916647854954162_n.jpg,Piaggio Vespa,piaggio_vespa_grp_020,,test
+data/processed\Piaggio Vespa\913215079_2337224237077349_5475558757956044022_n.jpg,Piaggio Vespa,piaggio_vespa_grp_093,,test
+data/processed\Piaggio Vespa\913215087_122315264006217773_4256338101396236961_n.jpg,Piaggio Vespa,piaggio_vespa_grp_047,,test
+data/processed\Piaggio Vespa\913392901_4656068874625454_827016592209529302_n.jpg,Piaggio Vespa,piaggio_vespa_grp_006,,test
+data/processed\Piaggio Vespa\913481976_122315264018217773_4671737220525725644_n.jpg,Piaggio Vespa,piaggio_vespa_grp_098,,test
+data/processed\Piaggio Vespa\913591135_1805234767429232_1567126466549129580_n.jpg,Piaggio Vespa,piaggio_vespa_grp_037,,test
+data/processed\Piaggio Vespa\913626493_3744288582392987_3126878589929440588_n.jpg,Piaggio Vespa,piaggio_vespa_grp_025,,test
+data/processed\Piaggio Vespa\913773259_2816546828741374_8186831780552919589_n.jpg,Piaggio Vespa,piaggio_vespa_grp_044,,test
+data/processed\Piaggio Vespa\913810028_2587842821736889_2836026688946859326_n.jpg,Piaggio Vespa,piaggio_vespa_grp_020,,test
+data/processed\Piaggio Vespa\914068348_1039106592577691_4797897862679359706_n.jpg,Piaggio Vespa,piaggio_vespa_grp_038,,test
+data/processed\Piaggio Vespa\914171667_122140500189395908_4706794468350737727_n.jpg,Piaggio Vespa,piaggio_vespa_grp_107,,test
+data/processed\Piaggio Vespa\914181434_3586392408196166_8386965534516222877_n.jpg,Piaggio Vespa,piaggio_vespa_grp_107,,test
+data/processed\Piaggio Vespa\914203761_1805211394098236_6029847263976741909_n.jpg,Piaggio Vespa,piaggio_vespa_grp_107,,test
+data/processed\Piaggio Vespa\914204369_1863177434815524_9177112425343321444_n.jpg,Piaggio Vespa,piaggio_vespa_grp_093,,test
+data/processed\Piaggio Vespa\914248343_122478884804001685_764602894283880036_n.jpg,Piaggio Vespa,piaggio_vespa_grp_107,,test
+data/processed\Piaggio Vespa\914249823_3741732175981961_5884424914387612193_n.jpg,Piaggio Vespa,piaggio_vespa_grp_098,,test
+data/processed\Piaggio Vespa\914285096_3559470734221047_1148797864623389448_n.jpg,Piaggio Vespa,piaggio_vespa_grp_107,,test
+data/processed\Piaggio Vespa\914676563_2391289318311726_3994661060853226844_n.jpg,Piaggio Vespa,piaggio_vespa_grp_047,,test
+data/processed\Piaggio Vespa\914924479_1805209287431780_7644589116435043624_n.jpg,Piaggio Vespa,piaggio_vespa_grp_045,,test
+data/processed\Piaggio Vespa\914988498_4656069107958764_8411572928988243327_n.jpg,Piaggio Vespa,piaggio_vespa_grp_003,,test
+data/processed\Piaggio Vespa\915977850_1807340633885312_5543473496427708939_n.jpg,Piaggio Vespa,piaggio_vespa_grp_063,,test
+data/processed\Piaggio Vespa\916041199_1118257284339861_898061713554866776_n.jpg,Piaggio Vespa,piaggio_vespa_grp_069,,test
+data/processed\Piaggio Vespa\916393785_3602770446566762_715259651188238278_n.jpg,Piaggio Vespa,piaggio_vespa_grp_042,,test
+data/processed\Piaggio Vespa\916462815_1766165314494064_1985338198972480666_n.jpg,Piaggio Vespa,piaggio_vespa_grp_020,,test
+data/processed\Piaggio Vespa\916555326_1704398591086950_7915773715392082323_n.jpg,Piaggio Vespa,piaggio_vespa_grp_135,,test
+data/processed\Piaggio Vespa\916563342_122136448785471430_7978997373995218907_n.jpg,Piaggio Vespa,piaggio_vespa_grp_135,,test
+data/processed\Piaggio Vespa\916578379_1707138554146287_4746253897589307263_n.jpg,Piaggio Vespa,piaggio_vespa_grp_135,,test
+data/processed\Piaggio Vespa\916578640_1707990557394420_2844289398595584870_n.jpg,Piaggio Vespa,piaggio_vespa_grp_135,,test
+data/processed\Piaggio Vespa\916578772_1707179100808899_1323549641749854803_n.jpg,Piaggio Vespa,piaggio_vespa_grp_135,,test
+data/processed\Piaggio Vespa\916670912_1901804337926353_1237400069599771327_n.jpg,Piaggio Vespa,piaggio_vespa_grp_140,,test
+data/processed\Piaggio Vespa\916892559_3604103313100142_4108821554133764342_n.jpg,Piaggio Vespa,piaggio_vespa_grp_082,,test
+data/processed\Piaggio Vespa\916945496_1707116970815112_439208438845895255_n.jpg,Piaggio Vespa,piaggio_vespa_grp_025,,test
+data/processed\Piaggio Vespa\917076695_1807343620551680_4312009929388131364_n.jpg,Piaggio Vespa,piaggio_vespa_grp_148,,test
+data/processed\Piaggio Vespa\917243107_3577483479094338_2598802537566154692_n.jpg,Piaggio Vespa,piaggio_vespa_grp_148,,test
+data/processed\Piaggio Vespa\917247158_2272752006639026_7404082293027357979_n.jpg,Piaggio Vespa,piaggio_vespa_grp_148,,test
+data/processed\Piaggio Vespa\917338524_40092223303755767_3039117391214138658_n.jpg,Piaggio Vespa,piaggio_vespa_grp_148,,test
+data/processed\Piaggio Vespa\917338661_1194880383210959_6173901376415348821_n.jpg,Piaggio Vespa,piaggio_vespa_grp_148,,test
+data/processed\Piaggio Vespa\917364921_3746945562127289_3227724407717283350_n.jpg,Piaggio Vespa,piaggio_vespa_grp_149,,test
+data/processed\Piaggio Vespa\918852452_1671079281213248_2717933683292793072_n.jpg,Piaggio Vespa,piaggio_vespa_grp_149,,test
+data/processed\Piaggio Vespa\919113608_1758358181930273_117740663367800771_n.jpg,Piaggio Vespa,piaggio_vespa_grp_149,,test
+data/processed\Piaggio Vespa\919217265_10164282115768026_3533997247692242586_n.jpg,Piaggio Vespa,piaggio_vespa_grp_149,,test
+data/processed\Piaggio Vespa\920195435_2272752106639016_699977156006484222_n.jpg,Piaggio Vespa,piaggio_vespa_grp_149,,test
+data/processed\Piaggio Vespa\920252477_1659547879181387_5009116691694126981_n.jpg,Piaggio Vespa,piaggio_vespa_grp_150,,test
+data/processed\Piaggio Vespa\920641249_1119904714175118_7258343409246014727_n.jpg,Piaggio Vespa,piaggio_vespa_grp_152,,test
+data/processed\Piaggio Vespa\920900851_1519087186429292_3415853049453407989_n.jpg,Piaggio Vespa,piaggio_vespa_grp_152,,test
+data/processed\Piaggio Vespa\922545444_1824966032047751_8640311171139508264_n.jpg,Piaggio Vespa,piaggio_vespa_grp_140,,test
+data/processed\Piaggio Vespa\923089575_2694698770964573_2662160389249025208_n.jpg,Piaggio Vespa,piaggio_vespa_grp_150,,test
+data/processed\Piaggio Vespa\924209828_1775398666866122_8061655941879837731_n.jpg,Piaggio Vespa,piaggio_vespa_grp_161,,test
+data/processed\Piaggio Vespa\924209883_1775398693532786_3091757675565644839_n.jpg,Piaggio Vespa,piaggio_vespa_grp_161,,test
+data/processed\Piaggio Vespa\925125404_1194880486544282_2350298332565064059_n.jpg,Piaggio Vespa,piaggio_vespa_grp_161,,test
+data/processed\Piaggio Vespa\925595872_2192960748766613_6161825241710650906_n.jpg,Piaggio Vespa,piaggio_vespa_grp_161,,test
+data/processed\Piaggio Vespa\925849253_3604103799766760_2969352991480350562_n.jpg,Piaggio Vespa,piaggio_vespa_grp_161,,test
+data/processed\Piaggio Vespa\925925402_1775398700199452_2132555189869070002_n.jpg,Piaggio Vespa,piaggio_vespa_grp_162,,test
+data/processed\Piaggio Vespa\926325643_1804496047518689_6913687471594812563_n.jpg,Piaggio Vespa,piaggio_vespa_grp_162,,test
+data/processed\Piaggio Vespa\926504006_2550058122173178_1679272647478909040_n.jpg,Piaggio Vespa,piaggio_vespa_grp_162,,test
+data/processed\Yamaha Exciter\04874b8d0d27a3cf608241eb3894ea24-3006140166028015630.jpg,Yamaha Exciter,yamaha_exciter_grp_001,,test
+data/processed\Yamaha Exciter\0bf4d5829a5633686d884ebde5477857-3012219586057647519.jpg,Yamaha Exciter,yamaha_exciter_grp_004,,test
+data/processed\Yamaha Exciter\0bfb1002e8fadba532dafcc6077a9505-2990597785286218221.jpg,Yamaha Exciter,yamaha_exciter_grp_004,,test
+data/processed\Yamaha Exciter\0c91c298345f17705f0479ca85ed3258-3012237066121377699.jpg,Yamaha Exciter,yamaha_exciter_grp_004,,test
+data/processed\Yamaha Exciter\0d563dc7b225dff5c502962046b3a4ec-2993195276409566733.jpg,Yamaha Exciter,yamaha_exciter_grp_004,,test
+data/processed\Yamaha Exciter\0e65fbce9ea5b835c617ba9ea4f4b7e4-3012237064375947857.jpg,Yamaha Exciter,yamaha_exciter_grp_004,,test
+data/processed\Yamaha Exciter\1794542510194_361872822386134786_g8794940108601882634_f2f268b9cfe75b6b324eeb97219986ea.jpg,Yamaha Exciter,yamaha_exciter_grp_011,,test
+data/processed\Yamaha Exciter\1794542510195_361872822386134786_g8794940108601882634_1d51ad67a2664a36ef8c8b3376142621.jpg,Yamaha Exciter,yamaha_exciter_grp_011,,test
+data/processed\Yamaha Exciter\1794542510196_361872822386134786_g8794940108601882634_fffbace6f2afb801fad4a2505c7a1dae.jpg,Yamaha Exciter,yamaha_exciter_grp_011,,test
+data/processed\Yamaha Exciter\1794542580842_361872822386134786_g8794940108601882634_a3f5c24838404612859929285631f86d.jpg,Yamaha Exciter,yamaha_exciter_grp_011,,test
+data/processed\Yamaha Exciter\1794542580843_361872822386134786_g8794940108601882634_1d1bb311c4c073e26cabdd4e1b5320f2.jpg,Yamaha Exciter,yamaha_exciter_grp_011,,test
+data/processed\Yamaha Exciter\1794829994131_361872822386134786_g8794940108601882634_6492520b4de823175c0ef093ea33d6a0.jpg,Yamaha Exciter,yamaha_exciter_grp_019,,test
+data/processed\Yamaha Exciter\1794997755150_361872822386134786_g8794940108601882634_8a740baa543c72b248edaba9362f3ac9.jpg,Yamaha Exciter,yamaha_exciter_grp_025,,test
+data/processed\Yamaha Exciter\1794997755153_361872822386134786_g8794940108601882634_de57d08dfae25e15fb65abbacb407683.jpg,Yamaha Exciter,yamaha_exciter_grp_025,,test
+data/processed\Yamaha Exciter\1794997755155_361872822386134786_g8794940108601882634_046325ac8140cd888af4161c93e081a2.jpg,Yamaha Exciter,yamaha_exciter_grp_025,,test
+data/processed\Yamaha Exciter\1794997755157_361872822386134786_g8794940108601882634_898febb2455c963a07ed1933a6fed43d.jpg,Yamaha Exciter,yamaha_exciter_grp_025,,test
+data/processed\Yamaha Exciter\1795083892289_361872822386134786_g8794940108601882634_3341255f62053eb8dc6861bf92d755ea.jpg,Yamaha Exciter,yamaha_exciter_grp_025,,test
+data/processed\Yamaha Exciter\1795237463240_361872822386134786_g8794940108601882634_3b444835ba10f24e3fe5fb5bf44baf74.jpg,Yamaha Exciter,yamaha_exciter_grp_027,,test
+data/processed\Yamaha Exciter\1795237463277_361872822386134786_g8794940108601882634_a34e20c1b1b8e3f241f8e35851418440.jpg,Yamaha Exciter,yamaha_exciter_grp_027,,test
+data/processed\Yamaha Exciter\1795237463313_361872822386134786_g8794940108601882634_f159a396be4be1b918232d221d21e001.jpg,Yamaha Exciter,yamaha_exciter_grp_027,,test
+data/processed\Yamaha Exciter\1795237463349_361872822386134786_g8794940108601882634_71f482ced7435ab5f0b5a1f7e33c4188.jpg,Yamaha Exciter,yamaha_exciter_grp_027,,test
+data/processed\Yamaha Exciter\1795237463386_361872822386134786_g8794940108601882634_b2cc2692918d1a375186693525ac9263.jpg,Yamaha Exciter,yamaha_exciter_grp_027,,test
+data/processed\Yamaha Exciter\1795420988735_2028209296597956130_2028209296597956130_25a76486af761f59887b815883c8a941.jpg,Yamaha Exciter,yamaha_exciter_grp_019,,test
+data/processed\Yamaha Exciter\1795421507886_2028209296597956130_2028209296597956130_05ba5d36612420dbf56921cfd33eebf0.jpg,Yamaha Exciter,yamaha_exciter_grp_031,,test
+data/processed\Yamaha Exciter\1795421526003_2028209296597956130_2028209296597956130_876cedeb1b3798a988a07119c023bebf.jpg,Yamaha Exciter,yamaha_exciter_grp_031,,test
+data/processed\Yamaha Exciter\1795421526842_2028209296597956130_2028209296597956130_8553489c1067c18321a8822420e73376.jpg,Yamaha Exciter,yamaha_exciter_grp_031,,test
+data/processed\Yamaha Exciter\1795421528855_2028209296597956130_2028209296597956130_c283613e66f58de4745509db7c830563.jpg,Yamaha Exciter,yamaha_exciter_grp_031,,test
+data/processed\Yamaha Exciter\1795421530824_2028209296597956130_2028209296597956130_80075632b4cab1af7b503641f27a4bd1.jpg,Yamaha Exciter,yamaha_exciter_grp_031,,test
+data/processed\Yamaha Exciter\1795421579396_2028209296597956130_2028209296597956130_75308abc53d2d5b126645014eb05ff96.jpg,Yamaha Exciter,yamaha_exciter_grp_033,,test
+data/processed\Yamaha Exciter\1795421580525_2028209296597956130_2028209296597956130_62cb2b09525da77fd562dec076e7b0a3.jpg,Yamaha Exciter,yamaha_exciter_grp_033,,test
+data/processed\Yamaha Exciter\1795437100091_2659807694597374702_2659807694597374702_093b9c5c046f1509e3bd8396c1fe4216.jpg,Yamaha Exciter,yamaha_exciter_grp_033,,test
+data/processed\Yamaha Exciter\1795437100113_2659807694597374702_2659807694597374702_14e4d21e0bf8c3284ef01506cdab2467.jpg,Yamaha Exciter,yamaha_exciter_grp_033,,test
+data/processed\Yamaha Exciter\1795438709114_8199599014023378125_8199599014023378125_2b937d2f05af86ad644444a71f212b77.jpg,Yamaha Exciter,yamaha_exciter_grp_033,,test
+data/processed\Yamaha Exciter\1795438752245_8199599014023378125_8199599014023378125_b89785b155f02b9713d3a79ad651df66.jpg,Yamaha Exciter,yamaha_exciter_grp_035,,test
+data/processed\Yamaha Exciter\1795438752260_8199599014023378125_8199599014023378125_80cf88a7cbf0bf4d9a49fb6c3f865203.jpg,Yamaha Exciter,yamaha_exciter_grp_035,,test
+data/processed\Yamaha Exciter\1795438752273_8199599014023378125_8199599014023378125_8c400cbb7c9890046e8d10718797f0fa.jpg,Yamaha Exciter,yamaha_exciter_grp_035,,test
+data/processed\Yamaha Exciter\1795438752284_8199599014023378125_8199599014023378125_b73a86178c4487ee5d4a4273c099e006.jpg,Yamaha Exciter,yamaha_exciter_grp_035,,test
+data/processed\Yamaha Exciter\1795440883326_6615196143931988426_6615196143931988426_364a0bf86c48e8d430af1734cfdaaa82.jpg,Yamaha Exciter,yamaha_exciter_grp_035,,test
+data/processed\Yamaha Exciter\2c10dab422182b0f9a3506352cd4cbcc-3012118552576718755.jpg,Yamaha Exciter,yamaha_exciter_grp_044,,test
+data/processed\Yamaha Exciter\37dc7d5b8b983107d203997e5e9fb2a4-3012237065228768111.jpg,Yamaha Exciter,yamaha_exciter_grp_048,,test
+data/processed\Yamaha Exciter\37e7319a615a8c1f22ea1e46cf817bfc-2999181631744491091.jpg,Yamaha Exciter,yamaha_exciter_grp_048,,test
+data/processed\Yamaha Exciter\395e9f7fad2b793a50b672bf1222a766-3012237064987788820.jpg,Yamaha Exciter,yamaha_exciter_grp_048,,test
+data/processed\Yamaha Exciter\39d4391ceb97192616a30daabdba57f5-3007176541176533726.jpg,Yamaha Exciter,yamaha_exciter_grp_048,,test
+data/processed\Yamaha Exciter\3c5ef6f86589cd2b71aa3d19c7f894e7-3012040362261004017.jpg,Yamaha Exciter,yamaha_exciter_grp_048,,test
+data/processed\Yamaha Exciter\3d95d344354c4c20ebc4021981514744-3007857983972517244.jpg,Yamaha Exciter,yamaha_exciter_grp_049,,test
+data/processed\Yamaha Exciter\4f4844e2440d736b4d40a9a3b69f6f3f-3001016359783997533.jpg,Yamaha Exciter,yamaha_exciter_grp_044,,test
+data/processed\Yamaha Exciter\5506106ff79f25a70b424acb602124a5-3007857984536346071.jpg,Yamaha Exciter,yamaha_exciter_grp_056,,test
+data/processed\Yamaha Exciter\713d9a166933ee6c80d2dea3305c5295-3012118680642519436.jpg,Yamaha Exciter,yamaha_exciter_grp_044,,test
+data/processed\Yamaha Exciter\807285081_1123238560058678_5360028063289396564_n.jpg,Yamaha Exciter,yamaha_exciter_grp_068,,test
+data/processed\Yamaha Exciter\807830487_1637401708014256_6431320883384532158_n.jpg,Yamaha Exciter,yamaha_exciter_grp_068,,test
+data/processed\Yamaha Exciter\807888661_2156164254969753_7187193168575839740_n.jpg,Yamaha Exciter,yamaha_exciter_grp_068,,test
+data/processed\Yamaha Exciter\807921566_1806477617372697_8835559758910186183_n.jpg,Yamaha Exciter,yamaha_exciter_grp_068,,test
+data/processed\Yamaha Exciter\829e34048780d8c61749b769385da299-3008865330127136337.jpg,Yamaha Exciter,yamaha_exciter_grp_068,,test
+data/processed\Yamaha Exciter\913889381_4069974903139854_6614225574166295875_n.jpg,Yamaha Exciter,yamaha_exciter_grp_077,,test
+data/processed\Yamaha Exciter\913948611_122181179888664221_2184887146114596878_n.jpg,Yamaha Exciter,yamaha_exciter_grp_077,,test
+data/processed\Yamaha Exciter\913995758_4069801369823874_9117625434005155497_n.jpg,Yamaha Exciter,yamaha_exciter_grp_077,,test
+data/processed\Yamaha Exciter\914206575_122112569625544552_8328883165215242266_n.jpg,Yamaha Exciter,yamaha_exciter_grp_077,,test
+data/processed\Yamaha Exciter\914268033_122112569457544552_6040348108539525024_n.jpg,Yamaha Exciter,yamaha_exciter_grp_077,,test
+data/processed\Yamaha Exciter\914530059_122232662090390175_4592619339917396822_n (1).jpg,Yamaha Exciter,yamaha_exciter_grp_001,,test
+data/processed\Yamaha Exciter\916563536_1066739539714239_823368875790325908_n.jpg,Yamaha Exciter,yamaha_exciter_grp_086,,test
+data/processed\Yamaha Exciter\916647430_122151777009179674_572731256600803543_n.jpg,Yamaha Exciter,yamaha_exciter_grp_086,,test
+data/processed\Yamaha Exciter\916647772_3833850853440372_3002551541561836443_n.jpg,Yamaha Exciter,yamaha_exciter_grp_086,,test
+data/processed\Yamaha Exciter\916679148_122134614819476022_3576456763552237803_n.jpg,Yamaha Exciter,yamaha_exciter_grp_086,,test
+data/processed\Yamaha Exciter\916679165_122134614717476022_8613932626381358073_n.jpg,Yamaha Exciter,yamaha_exciter_grp_086,,test
+data/processed\Yamaha Exciter\917075364_2313977232786552_1764359389763697298_n (1).jpg,Yamaha Exciter,yamaha_exciter_grp_089,,test
+data/processed\Yamaha Exciter\917247219_3833850940107030_7104131983736876179_n.jpg,Yamaha Exciter,yamaha_exciter_grp_089,,test
+data/processed\Yamaha Exciter\917362650_1192246223487467_2093575949945623027_n.jpg,Yamaha Exciter,yamaha_exciter_grp_089,,test
+data/processed\Yamaha Exciter\917362938_2313977499453192_2350375949428015060_n (1).jpg,Yamaha Exciter,yamaha_exciter_grp_089,,test
+data/processed\Yamaha Exciter\917365232_122112569559544552_3933386685889056979_n.jpg,Yamaha Exciter,yamaha_exciter_grp_089,,test
+data/processed\Yamaha Exciter\921191279_2288150245448923_8101612595169878864_n (1).jpg,Yamaha Exciter,yamaha_exciter_grp_094,,test
+data/processed\Yamaha Exciter\921545710_4605268616356028_5189245629604049833_n.jpg,Yamaha Exciter,yamaha_exciter_grp_094,,test
+data/processed\Yamaha Exciter\923882497_1669685954858946_2704286804755217651_n (1).jpg,Yamaha Exciter,yamaha_exciter_grp_001,,test
+data/processed\Yamaha Exciter\9348befb49c2e7733ffbeba0bb7ed1e5-3007857984156486988.jpg,Yamaha Exciter,yamaha_exciter_grp_049,,test
+data/processed\Yamaha Exciter\9bdcec2d044ffbcf2a735d1b6084e943-3012228379173849646.jpg,Yamaha Exciter,yamaha_exciter_grp_104,,test
+data/processed\Yamaha Exciter\9c96184a24bc366f936d7f5045bd2c2a-2998594697602288524.jpg,Yamaha Exciter,yamaha_exciter_grp_104,,test
+data/processed\Yamaha Exciter\9cf7911c4ad0e6930b2176de19f906e0-3012228379056472813.jpg,Yamaha Exciter,yamaha_exciter_grp_104,,test
+data/processed\Yamaha Exciter\9e5e0d8b1372d1843a16a0246fb5e6b3-3012175836083976099.jpg,Yamaha Exciter,yamaha_exciter_grp_104,,test
+data/processed\Yamaha Exciter\Turtle Exciter 150cc 2015 Yamaha VN _ 2NDF171E01.jpg,Yamaha Exciter,yamaha_exciter_grp_104,,test
+data/processed\Yamaha Exciter\b56fa7bd7e12fd543349eb062e805ed4-3012118389892186508.jpg,Yamaha Exciter,yamaha_exciter_grp_044,,test
+data/processed\Yamaha Exciter\c4181f072c54133f3e834b77242c507c-3007857983912600412.jpg,Yamaha Exciter,yamaha_exciter_grp_115,,test
+data/processed\Yamaha Exciter\c43b0f5df0a324823e9564f85f444bbf-3003667837377011653.jpg,Yamaha Exciter,yamaha_exciter_grp_115,,test
+data/processed\Yamaha Exciter\c4a75f9d3717936f31899e435d2d326a-3006705121796912066.jpg,Yamaha Exciter,yamaha_exciter_grp_115,,test
+data/processed\Yamaha Exciter\c4bddcf210ba06a4de094136b28bff59-2982628556948322194.jpg,Yamaha Exciter,yamaha_exciter_grp_115,,test
+data/processed\Yamaha Exciter\c53c155999f3d676faf760a29b66eb24-3005778925169877442.jpg,Yamaha Exciter,yamaha_exciter_grp_115,,test
+data/processed\Yamaha Exciter\d8971dabbccbb43ad89549283ec91b60-3007857984414076822.jpg,Yamaha Exciter,yamaha_exciter_grp_056,,test
+data/processed\Yamaha Exciter\f07b855ba5f9e21d32dd70f084b103cf-3003667837100991801.jpg,Yamaha Exciter,yamaha_exciter_grp_125,,test
+data/processed\Yamaha Exciter\f28d689ce7d7b44bcc7ecbbd4948ed30-3011758604555922568.jpg,Yamaha Exciter,yamaha_exciter_grp_125,,test
+data/processed\Yamaha Exciter\f35925f86ce3f64212ece14e2b76f578-2999181631886234492.jpg,Yamaha Exciter,yamaha_exciter_grp_125,,test
+data/processed\Yamaha Exciter\f37d2cf6c5103eb98808099cd6727f54-2998564110519125901.jpg,Yamaha Exciter,yamaha_exciter_grp_125,,test
+data/processed\Yamaha Exciter\f3a6637e253260594643b7ce8042e0bf-3010881404418125658.jpg,Yamaha Exciter,yamaha_exciter_grp_125,,test

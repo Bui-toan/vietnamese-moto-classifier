@@ -1,7 +1,7 @@
 {
   "model_name": "M3_CNN2",
   "best_hyperparams": {
-    "lr": 0.001,
+    "lr": 0.0005,
     "wd": 0.001
   },
   "classes": [

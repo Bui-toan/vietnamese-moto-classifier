@@ -29,10 +29,14 @@ data/test_frozen_copy/
 *.pt
 *.pth
 *.pkl
-models/*.pt
+models/*_train.npz
+models/*_val.npz
 
-# Ngoại lệ: Giữ lại các file stats Z-score nhẹ trong models/ để suy luận
+# Ngoại lệ: Giữ lại các file stats Z-score nhẹ và checkpoint chính trong models/ để suy luận
 !models/*_stats.npz
+!models/m1_hog_svm.npz
+!models/m2_cnn1.pt
+!models/m3_cnn2.pt
 
 # File hệ thống & IDE
 .vscode/

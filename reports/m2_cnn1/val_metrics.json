@@ -1,52 +1,52 @@
 {
-  "top1_acc": 0.16666666666666666,
-  "top2_acc": 0.38333333333333336,
-  "top3_acc": 0.5166666666666667,
-  "macro_f1": 0.047619047619047616,
-  "weighted_f1": 0.04761904761904761,
+  "top1_acc": 0.5087719298245614,
+  "top2_acc": 0.7145135566188198,
+  "top3_acc": 0.8389154704944178,
+  "macro_f1": 0.5082501072221247,
+  "weighted_f1": 0.5010446514143596,
   "per_class": {
     "Honda Wave": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 10
+      "precision": 0.44642857142857145,
+      "recall": 0.6024096385542169,
+      "f1": 0.5128205128205129,
+      "support": 83
     },
     "Honda Vision": {
-      "precision": 0.16666666666666666,
-      "recall": 1.0,
-      "f1": 0.2857142857142857,
-      "support": 10
+      "precision": 0.3780487804878049,
+      "recall": 0.29245283018867924,
+      "f1": 0.3297872340425532,
+      "support": 106
     },
     "Honda Air Blade": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 10
+      "precision": 0.3652173913043478,
+      "recall": 0.5121951219512195,
+      "f1": 0.4263959390862944,
+      "support": 82
     },
     "Yamaha Exciter": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 10
+      "precision": 0.5533980582524272,
+      "recall": 0.6263736263736264,
+      "f1": 0.5876288659793815,
+      "support": 91
     },
     "Piaggio Vespa": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 10
+      "precision": 0.6902654867256637,
+      "recall": 0.7959183673469388,
+      "f1": 0.7393364928909952,
+      "support": 98
     },
     "Honda SH": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 10
+      "precision": 0.5980392156862745,
+      "recall": 0.3652694610778443,
+      "f1": 0.45353159851301117,
+      "support": 167
     }
   },
-  "nll_before": 3.7999303340911865,
-  "nll_after": 1.8813046216964722,
-  "ece_before": 0.7320312182108561,
-  "ece_after": 0.1523690422375997,
-  "temperature": 5.0,
+  "nll_before": 1.2946134805679321,
+  "nll_after": 1.2595664262771606,
+  "ece_before": 0.10021471682537875,
+  "ece_after": 0.037704996372524065,
+  "temperature": 0.7000000000000001,
   "default_threshold": 0.5,
   "ood_threshold": 0.5,
   "reject_threshold": 0.5

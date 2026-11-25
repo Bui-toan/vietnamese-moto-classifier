@@ -1,8 +1,8 @@
 {
   "model_name": "M1_HOG_SVM",
   "best_hyperparams": {
-    "lr": 0.05,
-    "epochs": 50,
+    "lr": 0.01,
+    "epochs": 30,
     "weight_decay": 0.0
   },
   "classes": [
@@ -16,6 +16,5 @@
   "img_size": [
     112,
     112
-  ],
-  "feature_dim": 6084
+  ]
 }

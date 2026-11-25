@@ -18,12 +18,23 @@ import cv2
 import pandas as pd
 import streamlit as st
 from PIL import Image
+import importlib
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+_curr_dir = os.path.dirname(os.path.abspath(__file__))
+_parent_dir = os.path.dirname(_curr_dir)
+if _curr_dir not in sys.path:
+    sys.path.insert(0, _curr_dir)
+if _parent_dir not in sys.path:
+    sys.path.insert(0, _parent_dir)
 
-from app.ui.theme import apply_theme
-from app.ui.draw import draw_detection_boxes
-from app.ui.explain import generate_gradcam, visualize_hog_features
+try:
+    from ui.theme import apply_theme
+    from ui.draw import draw_detection_boxes
+    from ui.explain import generate_gradcam, visualize_hog_features
+except (ImportError, ModuleNotFoundError):
+    from app.ui.theme import apply_theme
+    from app.ui.draw import draw_detection_boxes
+    from app.ui.explain import generate_gradcam, visualize_hog_features
 from src.preprocess.transform import letterbox, aug_rotate, aug_brightness_contrast, aug_blur, aug_random_erase
 from src.preprocess.hog import extract_hog_features
 from src.models.svm import LinearSVM
@@ -83,6 +94,11 @@ def load_all_models():
             pass
     m3_model.eval()
 
+    # Load stats
+    m1_stats = np.load("models/hog_stats.npz") if os.path.exists("models/hog_stats.npz") else None
+    m2_stats = np.load("models/cnn1_stats.npz") if os.path.exists("models/cnn1_stats.npz") else None
+    m3_stats = np.load("models/cnn2_stats.npz") if os.path.exists("models/cnn2_stats.npz") else None
+
     # 4. Detector SVM
     det_svm = None
     if os.path.exists("models/detector_svm.npz"):
@@ -99,6 +115,10 @@ def load_all_models():
         "m1_svm": m1_svm,
         "m2_cnn1": m2_model,
         "m3_cnn2": m3_model,
+        "m1_stats": m1_stats,
+        "m2_stats": m2_stats,
+        "m3_stats": m3_stats,
+        "det_svm": det_svm,
         "detector": detector
     }
 
@@ -107,49 +127,62 @@ models_dict = load_all_models()
 best_config = models_dict["best_cfg"]
 default_reject_threshold = best_config.get("reject_threshold", 0.5)
 
-# Header
-st.markdown('<div class="main-title">🏍️ Phân Loại Dòng Xe Máy Phổ Biến Tại Việt Nam</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-title">Hệ thống thị giác máy tính nhận diện 6 dòng xe máy đặc trưng (Wave, Vision, Air Blade, Exciter, Vespa, SH)</div>', unsafe_allow_html=True)
-
-# 5 Tabs chức năng
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+# 4 Tabs chức năng
+tab1, tab2, tab3, tab4 = st.tabs([
     "🔍 Nhận diện",
     "⚖️ So sánh 3 mô hình",
     "📊 Kết quả kiểm thử",
-    "🛡️ Thử độ bền (Robustness)",
-    "ℹ️ Giới thiệu đề tài"
+    "🛡️ Thử độ bền (Robustness)"
 ])
 
 
 def classify_patch(img_patch_rgb, model_name="M3_CNN2"):
     """Phân loại 1 khung ảnh xe máy và trả về xác suất 6 lớp + latency."""
     t0 = time.perf_counter()
-    lb_112 = letterbox(img_patch_rgb, (112, 112))
 
     if model_name == "M1_HOG_SVM":
-        hog_feat = extract_hog_features(lb_112, cell_size=8, block_size=2)
-        # Giả lập hoặc chuẩn hóa
+        lb_img = letterbox(img_patch_rgb, (112, 112))
+        hog_feat = extract_hog_features(lb_img, cell_size=8, block_size=2)
+        if models_dict.get("m1_stats") is not None:
+            mean = models_dict["m1_stats"]["mean"]
+            std = models_dict["m1_stats"]["std"]
+            hog_feat = (hog_feat - mean) / (std + 1e-7)
         scores = models_dict["m1_svm"].forward(hog_feat[np.newaxis, :])[0]
-        temp = best_config.get("temperature", 1.0)
+        temp = 5.0
     elif model_name == "M2_CNN1":
+        lb_img = letterbox(img_patch_rgb, (112, 112))
         import torch
-        img_t = torch.from_numpy(lb_112.transpose(2, 0, 1)).float().unsqueeze(0) / 255.0
+        img_f = lb_img.transpose(2, 0, 1).astype(np.float32) / 255.0
+        if models_dict.get("m2_stats") is not None:
+            m = models_dict["m2_stats"]["mean"][:, None, None]
+            s = models_dict["m2_stats"]["std"][:, None, None]
+            img_f = (img_f - m) / (s + 1e-7)
+        img_t = torch.from_numpy(img_f).unsqueeze(0).float()
         with torch.no_grad():
             scores = models_dict["m2_cnn1"](img_t)[0].numpy()
-        temp = 1.0
+        temp = 0.70
     else:  # M3_CNN2
+        lb_img = letterbox(img_patch_rgb, (160, 160))
         import torch
-        img_t = torch.from_numpy(lb_112.transpose(2, 0, 1)).float().unsqueeze(0) / 255.0
+        img_f = lb_img.transpose(2, 0, 1).astype(np.float32) / 255.0
+        if models_dict.get("m3_stats") is not None:
+            m = models_dict["m3_stats"]["mean"][:, None, None]
+            s = models_dict["m3_stats"]["std"][:, None, None]
+            img_f = (img_f - m) / (s + 1e-7)
+        img_t = torch.from_numpy(img_f).unsqueeze(0).float()
+        img_flip = torch.flip(img_t, dims=[3])
         with torch.no_grad():
-            scores = models_dict["m3_cnn2"](img_t)[0].numpy()
-        temp = 1.0
+            s_orig = models_dict["m3_cnn2"](img_t)
+            s_flip = models_dict["m3_cnn2"](img_flip)
+            scores = (0.5 * (s_orig + s_flip))[0].numpy()
+        temp = 0.65
 
     latency_ms = (time.perf_counter() - t0) * 1000.0
 
-    # Softmax
+    # Softmax với Temperature Scaling
     exp_s = np.exp((scores / temp) - np.max(scores / temp))
     probs = exp_s / np.sum(exp_s)
-    return probs, latency_ms, lb_112
+    return probs, latency_ms, lb_img
 
 
 # -------------------------------------------------------------
@@ -160,7 +193,7 @@ with tab1:
 
     with col_input:
         st.subheader("Đầu vào hình ảnh")
-        input_mode = st.radio("Nguồn ảnh:", ["Tải ảnh lên", "Chụp từ Camera", "Ảnh mẫu có sẵn"], horizontal=True)
+        input_mode = st.radio("Nguồn ảnh:", ["Tải ảnh lên", "Chụp từ Camera"], horizontal=True)
 
         input_img = None
         if input_mode == "Tải ảnh lên":
@@ -175,20 +208,9 @@ with tab1:
                 image_bytes = np.asarray(bytearray(cam_pic.read()), dtype=np.uint8)
                 input_img = cv2.imdecode(image_bytes, cv2.IMREAD_COLOR)
                 input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
-        else:
-            sample_choice = st.selectbox("Chọn ảnh mẫu:", [
-                "Mẫu 1: Honda Wave (1 xe)",
-                "Mẫu 2: Honda SH (1 xe)",
-                "Mẫu 3: Bãi đỗ xe (Nhiều xe Wave + Vision)"
-            ])
-            # Tạo ảnh mẫu giả lập
-            np.random.seed(len(sample_choice))
-            input_img = np.random.randint(40, 200, (480, 640, 3), dtype=np.uint8)
-            cv2.putText(input_img, sample_choice.split(":")[1], (50, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
 
         st.markdown("---")
-        # Checkbox "Ảnh có nhiều xe" (Mục 7.2)
-        has_multiple_moto = st.checkbox("Ảnh có nhiều xe", value=False, help="Bật khi ảnh chứa từ 2 xe máy trở lên để chạy bộ phát hiện phụ trợ.")
+        auto_detect = st.checkbox("🔍 Tự động phát hiện và khoanh vùng xe (Auto-Detect)", value=True, help="Tự động quét và khoanh vùng từng chiếc xe máy trong ảnh.")
         reject_thresh = st.slider(
             "Ngưỡng từ chối (Reject Threshold):",
             min_value=0.1, max_value=0.9,
@@ -202,22 +224,25 @@ with tab1:
             H, W = input_img.shape[:2]
             detections = []
 
-            if not has_multiple_moto:
-                # Chế độ 1 xe: Toàn bộ ảnh là 1 xe
+            if auto_detect:
+                # Tự động quét tìm xe máy bằng Detector
+                import src.detector.detector
+                importlib.reload(src.detector.detector)
+                fresh_det = src.detector.detector.MotorbikeDetector(models_dict.get("det_svm"))
+                raw_dets = fresh_det.detect(cv2.cvtColor(input_img, cv2.COLOR_RGB2BGR), score_thresh=0.35, max_keep=4)
+                if raw_dets:
+                    detections = raw_dets
+                else:
+                    # Fallback nếu là ảnh chụp cận cảnh 1 xe duy nhất
+                    detections.append({"id": 1, "box": [0, 0, W, H], "padded_box": [0, 0, W, H], "score": 1.0})
+            else:
+                # Chế độ thủ công: Coi toàn bộ ảnh là 1 xe
                 detections.append({
                     "id": 1,
                     "box": [0, 0, W, H],
                     "padded_box": [0, 0, W, H],
                     "score": 1.0
                 })
-            else:
-                # Chế độ nhiều xe: Chạy bộ phát hiện phụ trợ Detector (4B)
-                raw_dets = models_dict["detector"].detect(cv2.cvtColor(input_img, cv2.COLOR_RGB2BGR), score_thresh=0.4)
-                if not raw_dets:
-                    # Nếu detector không thấy, fallback coi như 1 box chính giữa
-                    detections.append({"id": 1, "box": [W//4, H//4, 3*W//4, 3*H//4], "padded_box": [0, 0, W, H], "score": 0.8})
-                else:
-                    detections = raw_dets
 
             # Phân loại cho từng xe
             classified_results = []
@@ -229,7 +254,7 @@ with tab1:
                 if crop_patch.size == 0:
                     crop_patch = input_img
 
-                probs, lat_ms, lb_112 = classify_patch(crop_patch, model_name=best_config.get("model", "M3_CNN2"))
+                probs, lat_ms, lb_img = classify_patch(crop_patch, model_name=best_config.get("model", "M3_CNN2"))
                 top3_idx = np.argsort(probs)[-3:][::-1]
                 top1_idx = top3_idx[0]
                 conf = probs[top1_idx]
@@ -251,7 +276,7 @@ with tab1:
                     "top3": [(CLASS_NAMES[i], probs[i]) for i in top3_idx],
                     "latency_ms": lat_ms,
                     "patch": crop_patch,
-                    "lb_112": lb_112
+                    "lb_img": lb_img
                 }
                 classified_results.append(det_entry)
 
@@ -265,13 +290,14 @@ with tab1:
             bgr_drawn = draw_detection_boxes(cv2.cvtColor(input_img, cv2.COLOR_RGB2BGR), classified_results)
             rgb_drawn = cv2.cvtColor(bgr_drawn, cv2.COLOR_BGR2RGB)
 
-            st.image(rgb_drawn, caption="Ảnh kết quả nhận diện (Đánh số theo hàng từ trên xuống, từ trái sang phải)", use_container_width=True)
+            # Hiển thị ảnh kích thước vừa vặn (width=480) không quá to
+            st.image(rgb_drawn, caption="Ảnh kết quả nhận diện (Đánh số theo hàng từ trên xuống, từ trái sang phải)", width=480)
 
-            # Bảng chú thích bên dưới ảnh theo đúng yêu cầu mục 7.2
+            # Bảng chú thích bên dưới ảnh
             st.markdown("#### 📋 Chú thích các xe phát hiện trong ảnh:")
             st.info(" | ".join(caption_items))
 
-            # Chọn 1 xe để xem chi tiết
+            # Chọn xe để xem chi tiết (Xe số 1, Xe số 2...)
             st.markdown("---")
             selected_id = st.selectbox("Chọn xe để xem phân tích chi tiết:", [d["id"] for d in classified_results], format_func=lambda x: f"Xe số {x}")
             sel_entry = next(d for d in classified_results if d["id"] == selected_id)
@@ -300,10 +326,10 @@ with tab1:
                 st.markdown("##### Giải thích quyết định (Grad-CAM):")
                 # Grad-CAM
                 import torch
-                crop_t = torch.from_numpy(sel_entry["lb_112"].transpose(2, 0, 1)).float().unsqueeze(0) / 255.0
+                crop_t = torch.from_numpy(sel_entry["lb_img"].transpose(2, 0, 1)).float().unsqueeze(0) / 255.0
                 gcam_map = generate_gradcam(models_dict["m3_cnn2"], crop_t)
-                overlay = cv2.addWeighted(sel_entry["lb_112"], 0.6, gcam_map, 0.4, 0)
-                st.image(overlay, caption="Vùng tập trung nhận diện của mô hình", use_container_width=True)
+                overlay = cv2.addWeighted(sel_entry["lb_img"], 0.6, gcam_map, 0.4, 0)
+                st.image(overlay, caption="Vùng tập trung nhận diện của mô hình", width=280)
 
             # Nút tải ảnh và JSON
             col_d1, col_d2 = st.columns(2)
@@ -342,7 +368,7 @@ with tab2:
     st.caption("Đối chiếu kết quả dự đoán giữa M1 (HOG + LinearSVM), M2 (CNN-1 Baseline), và M3 (CNN-2 ResNet)")
 
     if input_img is not None:
-        patch_test = input_img if not has_multiple_moto else classified_results[0]["patch"]
+        patch_test = classified_results[0]["patch"] if (classified_results and len(classified_results) > 0) else input_img
         col_m1, col_m2, col_m3 = st.columns(3)
 
         # M1
@@ -453,36 +479,47 @@ with tab4:
             if slider_erase > 0:
                 rob_img = aug_random_erase(rob_img, p=1.0, sh=slider_erase)
 
-            # Phân loại lại với ảnh bị biến đổi
-            p_rob, lat_rob, _ = classify_patch(rob_img, "M3_CNN2")
-            pred_rob = CLASS_NAMES[np.argmax(p_rob)]
-            conf_rob = np.max(p_rob)
+            # Tự động quét và nhận diện các xe trong ảnh bị biến đổi
+            H_r, W_r = rob_img.shape[:2]
+            import src.detector.detector
+            importlib.reload(src.detector.detector)
+            fresh_det = src.detector.detector.MotorbikeDetector(models_dict.get("det_svm"))
+            raw_dets_rob = fresh_det.detect(cv2.cvtColor(rob_img, cv2.COLOR_RGB2BGR), score_thresh=0.35, max_keep=4)
 
-            st.image(rob_img, caption=f"Ảnh sau biến dạng -> Dự đoán: {pred_rob} ({conf_rob*100:.1f}%)", use_container_width=True)
+            if not raw_dets_rob:
+                raw_dets_rob = [{"id": 1, "box": [0, 0, W_r, H_r], "padded_box": [0, 0, W_r, H_r], "score": 1.0}]
+
+            rob_results = []
+            caption_rob = []
+            for det in raw_dets_rob:
+                px1, py1, px2, py2 = det["padded_box"]
+                patch = rob_img[py1:py2, px1:px2]
+                if patch.size == 0:
+                    patch = rob_img
+                p_d, lat_d, _ = classify_patch(patch, "M3_CNN2")
+                t1 = np.argmax(p_d)
+                c1 = p_d[t1]
+                if c1 < reject_thresh:
+                    lbl = "Không đủ thông tin để nhận diện"
+                    is_rej = True
+                else:
+                    lbl = CLASS_NAMES[t1]
+                    is_rej = False
+                rob_results.append({
+                    "id": det["id"],
+                    "box": det["box"],
+                    "label": lbl,
+                    "conf": c1,
+                    "is_rejected": is_rej
+                })
+                caption_rob.append(f"**{det['id']}** – {lbl} ({c1*100:.1f}%)")
+
+            drawn_rob = draw_detection_boxes(cv2.cvtColor(rob_img, cv2.COLOR_RGB2BGR), rob_results)
+            rgb_drawn_rob = cv2.cvtColor(drawn_rob, cv2.COLOR_BGR2RGB)
+
+            # Thu nhỏ ảnh (width=450) để không phải cuộn chuột
+            st.image(rgb_drawn_rob, caption="Ảnh sau biến dạng và nhận diện tự động", width=450)
+            st.markdown("#### 📋 Chú thích các xe nhận diện được:")
+            st.info(" | ".join(caption_rob))
         else:
             st.info("Vui lòng tải ảnh ở Tab 1 để thử độ bền.")
-
-# -------------------------------------------------------------
-# TAB 5: GIỚI THIỆU
-# -------------------------------------------------------------
-with tab5:
-    st.subheader("ℹ️ Giới Thiệu Đề Tài & Kiến Trúc Kỹ Thuật")
-    st.markdown("""
-    ### 6 Dòng Xe Máy Phổ Biến Được Phân Loại:
-    1. **Honda Wave**: Xe số phổ thông quốc dân (bao gồm Wave Alpha, Wave RSX).
-    2. **Honda Vision**: Dòng xe tay ga nhỏ gọn phổ biến nhất đô thị.
-    3. **Honda Air Blade**: Dòng xe tay ga thể thao đa dụng.
-    4. **Yamaha Exciter**: Dòng xe côn tay thể thao đường phố.
-    5. **Piaggio Vespa**: Dòng xe tay ga phong cách cổ điển của Ý.
-    6. **Honda SH**: Dòng xe tay ga cao cấp (bao gồm SH 125/150/160, SH Mode).
-    
-    ---
-    ### Các Điểm Kỹ Thuật Đặc Biệt (Bản v4):
-    - **Tự code 100%**: Toàn bộ thuật toán xoay ảnh song tuyến, HOG, aHash 8x8, LinearSVM, NMS và BBox Jitter đều tự lập trình bằng NumPy thuần, không phụ thuộc vào thư viện bên ngoài.
-    - **Xử lý OOD không dùng lớp 'Khác'**: Tách 2 ngưỡng từ chối $\\tau_{\\text{conf}}$ và $\\tau_{\\text{ood}}$, sử dụng Temperature Scaling trên softmax để nhận diện xe lạ ngoài 6 lớp.
-    - **Cơ chế Khóa dữ liệu**: Kiểm định mã băm SHA-256 trên Windows và kiểm tra thứ tự thời gian nghiêm ngặt chống rò rỉ dữ liệu.
-    """)
-
-    if os.path.exists("reports/training_summary.md"):
-        with open("reports/training_summary.md", "r", encoding="utf-8") as f:
-            st.markdown(f.read())

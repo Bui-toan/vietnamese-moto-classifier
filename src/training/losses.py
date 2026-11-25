@@ -5,7 +5,7 @@ Tuân thủ nghiêm ngặt mục 5.1 của kế hoạch v4:
 - CrossEntropyWithLabelSmoothing: Hàm mất mát CE kết hợp Label Smoothing (smoothing 0.1) cho CNN.
 """
 
-from typing import Tuple
+from typing import Tuple, Optional
 import numpy as np
 import torch
 import torch.nn as nn
@@ -81,3 +81,25 @@ class LabelSmoothingCrossEntropy(nn.Module):
         smooth_loss = -logprobs.mean(dim=-1)
         loss = self.confidence * nll_loss + self.smoothing * smooth_loss
         return loss.mean()
+
+
+class FocalLoss(nn.Module):
+    r"""
+    Focal Loss kết hợp Class Weights và Label Smoothing:
+    Tập trung gradient vào các ca khó (hard examples) như Wave bị nhầm với SH, Air Blade với Exciter.
+    FL(p_t) = (1 - p_t)^\gamma * CE(logits, y)
+    """
+    def __init__(self, weight: Optional[torch.Tensor] = None, gamma: float = 1.5, label_smoothing: float = 0.05):
+        super().__init__()
+        self.weight = weight
+        self.gamma = gamma
+        self.label_smoothing = label_smoothing
+
+    def forward(self, logits: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+        ce_loss = F.cross_entropy(
+            logits, target, weight=self.weight, label_smoothing=self.label_smoothing, reduction='none'
+        )
+        pt = torch.exp(-ce_loss)
+        focal_loss = ((1.0 - pt) ** self.gamma) * ce_loss
+        return focal_loss.mean()
+

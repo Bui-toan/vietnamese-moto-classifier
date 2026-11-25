@@ -63,8 +63,9 @@ def generate_gradcam(
     else:
         cam_np = np.zeros_like(cam_np)
 
-    # Resize về 112x112
-    cam_resized = cv2.resize((cam_np * 255).astype(np.uint8), (112, 112), interpolation=cv2.INTER_LINEAR)
+    # Resize về kích thước của input_tensor
+    in_h, in_w = input_tensor.shape[2], input_tensor.shape[3]
+    cam_resized = cv2.resize((cam_np * 255).astype(np.uint8), (in_w, in_h), interpolation=cv2.INTER_LINEAR)
     heatmap = cv2.applyColorMap(cam_resized, cv2.COLORMAP_JET)
     heatmap_rgb = cv2.cvtColor(heatmap, cv2.COLOR_BGR2RGB)
 

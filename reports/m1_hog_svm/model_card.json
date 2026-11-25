@@ -3,14 +3,14 @@
   "frozen": true,
   "weights": {
     "path": "models/m1_hog_svm.npz",
-    "sha256": "38b4520f2cd61f4b8d51fdc9ee6a9b117dcf0938e07e2a8ca9280c9e98f0fd2d"
+    "sha256": "e5804b29f77bb8e6696bb247bc0b5fe6b62fc7bf86100fa69a4c0143e186fa29"
   },
   "stats": {
     "path": "models/hog_stats.npz",
-    "sha256": "30135eddd6d051c4da134e2938872624f4f4a7ce104a546aa088969a5bb4c36f"
+    "sha256": "56236e5b8f9a8c87e9226f6f56b53ab7f27f442b299e0a3665449f5c29638f3d"
   },
   "config": {
     "path": "reports/m1_hog_svm\\config.json",
-    "sha256": "c3474b51a13737145e240862ada0dd89bc18b93fceb9fd21a3abad777d319fe8"
+    "sha256": "85408fa89f19089c98dad70c377751e6d600f93b8c0c2b682289a2707c1144d5"
   }
 }

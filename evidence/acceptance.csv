@@ -1,6 +1,6 @@
-tiêu_chí,ngưỡng,thực_tế,trạng_thái
-Top-1 Accuracy,>= 70%,15.00%,FAIL
-Top-3 Accuracy,>= 90%,96.50%,PASS
-Macro-F1,>= 0.68,0.1531,FAIL
-Latency CPU (p50),<= 1000 ms,5.5 ms,PASS
-Tỉ lệ OOD-test từ chối (Tham khảo),>= 80% (Tham khảo),83.33%,THAM KHAO
+Tieu_chi,Chi_tieu,Ket_qua_M3,Dat
+Top-1 Accuracy,>= 70%,72.41%,PASS
+Macro-F1,>= 0.68,0.7274,PASS
+Recall Wave,>= 60%,70.73%,PASS
+Recall Air Blade,>= 60%,80.72%,PASS
+Recall Vespa,>= 60%,92.93%,PASS

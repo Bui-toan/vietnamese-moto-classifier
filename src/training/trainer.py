@@ -159,8 +159,15 @@ class TorchTrainer:
                 "is_best": is_best
             })
 
+            best_tag = " [BEST]" if is_best else ""
+            print(f"  Epoch {ep:02d}/{epochs:02d} | Train Loss: {tr_loss/max(1, total_tr):.4f} | Val Acc: {acc*100:.2f}% | Val Macro-F1: {f1:.4f} | Time: {ep_time:.1f}s{best_tag}", flush=True)
+
             if patience_counter >= self.patience:
-                print(f"Early stopping kích hoạt tại epoch {ep} (Patience={self.patience})")
+                print(f"  >> Early stopping kích hoạt tại epoch {ep} (Patience={self.patience})", flush=True)
                 break
+
+        # Khôi phục lại trọng số của epoch tốt nhất trước khi trả về
+        if os.path.exists(self.save_path):
+            self.model.load_state_dict(torch.load(self.save_path, map_location=self.device))
 
         return pd.DataFrame(self.history)

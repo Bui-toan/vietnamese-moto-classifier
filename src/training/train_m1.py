@@ -25,12 +25,18 @@ from src.eval.metrics import compute_accuracy_topk, compute_per_class_metrics, C
 from src.train.common import generate_env_json, generate_model_card
 
 
-def extract_hog_dataset(df: pd.DataFrame, is_train: bool = False, seed: int = 42):
+def extract_hog_dataset(df: pd.DataFrame, is_train: bool = False, seed: int = 42, cache_file: str = None):
+    if cache_file and os.path.exists(cache_file):
+        print(f"-> Đang tải HOG features từ cache: {cache_file}")
+        data = np.load(cache_file)
+        return data["feats"], data["labels"]
+
     class_map = {name: i for i, name in enumerate(CLASS_NAMES)}
     feats, labels = [], []
     rng = np.random.RandomState(seed)
 
-    for _, row in df.iterrows():
+    print(f"-> Đang trích xuất HOG features cho {len(df)} ảnh (is_train={is_train})...")
+    for idx, row in df.iterrows():
         p = row["image_path"]
         lbl_str = row["label"]
         if lbl_str not in class_map:
@@ -44,20 +50,21 @@ def extract_hog_dataset(df: pd.DataFrame, is_train: bool = False, seed: int = 42
         else:
             img = np.full((112, 112, 3), 128, dtype=np.uint8)
 
-        n_copies = 4 if is_train else 1
-        for c in range(n_copies):
-            img_c = img.copy()
-            if is_train and c > 0:
-                if rng.rand() < 0.5:
-                    img_c = aug_rotate(img_c, rng.uniform(-15, 15))
-                if rng.rand() < 0.5:
-                    img_c = aug_brightness_contrast(img_c, alpha=rng.uniform(0.8, 1.2), beta=rng.uniform(-20, 20))
-            lb = letterbox(img_c, (112, 112))
-            hog = extract_hog_features(lb, cell_size=8, block_size=2)
-            feats.append(hog)
-            labels.append(y)
+        # 1 copy cho tập dữ liệu thực tế lớn
+        lb = letterbox(img, (112, 112))
+        hog = extract_hog_features(lb, cell_size=8, block_size=2)
+        feats.append(hog)
+        labels.append(y)
 
-    return np.array(feats, dtype=np.float32), np.array(labels, dtype=np.int64)
+    X = np.array(feats, dtype=np.float32)
+    Y = np.array(labels, dtype=np.int64)
+
+    if cache_file:
+        os.makedirs(os.path.dirname(cache_file), exist_ok=True)
+        np.savez_compressed(cache_file, feats=X, labels=Y)
+        print(f"-> Đã lưu HOG features vào cache: {cache_file}")
+
+    return X, Y
 
 
 def main():
@@ -71,8 +78,8 @@ def main():
     df_tr = pd.read_csv("splits/train.csv") if os.path.exists("splits/train.csv") else pd.DataFrame(columns=["image_path", "label"])
     df_val = pd.read_csv("splits/val.csv") if os.path.exists("splits/val.csv") else pd.DataFrame(columns=["image_path", "label"])
 
-    X_train, y_train = extract_hog_dataset(df_tr, is_train=True)
-    X_val, y_val = extract_hog_dataset(df_val, is_train=False)
+    X_train, y_train = extract_hog_dataset(df_tr, is_train=True, cache_file="models/hog_train.npz")
+    X_val, y_val = extract_hog_dataset(df_val, is_train=False, cache_file="models/hog_val.npz")
 
     if len(X_train) == 0:
         np.random.seed(42)

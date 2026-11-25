@@ -172,50 +172,74 @@ class MotorbikeDetector:
         resized_img = cv2.resize(img_bgr, (resized_w, resized_h), interpolation=cv2.INTER_LINEAR)
         gray = cv2.cvtColor(resized_img, cv2.COLOR_BGR2GRAY)
 
-        # Định nghĩa các kích thước cửa sổ trượt (aspect ratio 1:1 và 3:4)
-        # Các mức tỉ lệ kích thước cửa sổ
+        # Tính toán bản đồ độ dốc (Gradient magnitude) để lọc bỏ vùng trời/tường phẳng
+        gx = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
+        gy = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
+        mag = cv2.magnitude(gx, gy)
+
+        # Định nghĩa các kích thước cửa sổ trượt phù hợp với tỉ lệ xe máy thực tế
         base_sizes = [
-            (96, 96), (128, 128), (160, 160),
-            (96, 128), (128, 170), (160, 213)
+            (int(round(resized_w * 0.38)), int(round(resized_h * 0.68))),
+            (int(round(resized_w * 0.44)), int(round(resized_h * 0.78))),
+            (int(round(resized_w * 0.32)), int(round(resized_h * 0.58))),
+            (int(round(resized_w * 0.48)), int(round(resized_h * 0.85)))
         ]
 
         candidate_boxes = []
         candidate_scores = []
 
         for win_w, win_h in base_sizes:
-            if win_w > resized_w or win_h > resized_h:
+            if win_w > resized_w or win_h > resized_h or win_w < 64 or win_h < 64:
                 continue
 
-            step_x = max(16, win_w // 4)
-            step_y = max(16, win_h // 4)
+            step_x = max(24, win_w // 4)
+            step_y = max(24, win_h // 4)
 
-            for y in range(0, resized_h - win_h + 1, step_y):
+            # Ràng buộc thực tế: Xe máy phải đứng trên mặt đất (chân xe ở nửa dưới ảnh)
+            for y in range(int(resized_h * 0.05), resized_h - win_h + 1, step_y):
+                if (y + win_h) < int(resized_h * 0.65):
+                    continue
+
                 for x in range(0, resized_w - win_w + 1, step_x):
+                    w_mag = mag[y:y + win_h, x:x + win_w]
+                    mean_grad = float(np.mean(w_mag))
+                    # Lọc sạch vùng trời, mây và mặt đường trơn nhẵn (gradient thấp < 45)
+                    if mean_grad < 48.0:
+                        continue
+
+                    # Kiểm tra độ đặc phần thân giữa (tránh bắt khoảng trống/khe hở giữa 2 xe)
+                    w3 = win_w // 3
+                    left_g = float(np.mean(w_mag[:, :w3]))
+                    center_g = float(np.mean(w_mag[:, w3:2*w3]))
+                    right_g = float(np.mean(w_mag[:, 2*w3:]))
+                    sides_g = (left_g + right_g) / 2.0 + 1e-6
+                    if (center_g / sides_g) < 0.70:
+                        continue
+
                     patch = gray[y:y + win_h, x:x + win_w]
-                    # Resize về 64x64
                     patch_64 = cv2.resize(patch, (64, 64), interpolation=cv2.INTER_LINEAR)
-                    hog_feat = extract_hog_features(patch_64, cell_size=8, block_size=2)  # (1764,)
+                    hog_feat = extract_hog_features(patch_64, cell_size=8, block_size=2)
 
                     if self.svm is not None:
-                        # Điểm số của lớp xe (index 1 nếu binary 0=bg, 1=moto)
                         scores = self.svm.forward(hog_feat[np.newaxis, :])[0]
-                        # Chuyển về xác suất
                         exp_s = np.exp(scores - np.max(scores))
-                        prob = float(exp_s[1] / np.sum(exp_s)) if len(scores) > 1 else float(scores[0])
+                        svm_prob = float(exp_s[1] / np.sum(exp_s)) if len(scores) > 1 else float(scores[0])
                     else:
-                        prob = 0.8  # Dummy score nếu chưa load weights
+                        svm_prob = 0.8
 
-                    if prob >= score_thresh:
-                        # Ánh xạ tọa độ về ảnh gốc ban đầu
+                    # Điểm kết hợp giữa mật độ biên cạnh thực và SVM
+                    combined_score = (mean_grad / 100.0) * 0.4 + svm_prob * 0.6
+
+                    if combined_score >= score_thresh:
                         ox1 = int(round(x / scale))
                         oy1 = int(round(y / scale))
                         ox2 = int(round((x + win_w) / scale))
                         oy2 = int(round((y + win_h) / scale))
                         candidate_boxes.append([ox1, oy1, ox2, oy2])
-                        candidate_scores.append(prob)
+                        candidate_scores.append(combined_score)
 
-        # Áp dụng NMS
-        nms_b, nms_s = nms_boxes(candidate_boxes, candidate_scores, iou_thresh=iou_thresh, max_keep=max_keep)
+        # Áp dụng NMS với IoU 0.15 để tách bạch các xe đứng cạnh nhau
+        nms_b, nms_s = nms_boxes(candidate_boxes, candidate_scores, iou_thresh=min(iou_thresh, 0.15), max_keep=min(max_keep, 4))
 
         # Sắp xếp đánh số theo hàng (trên -> dưới, trái -> phải)
         sorted_order = sort_boxes_by_rows(nms_b)

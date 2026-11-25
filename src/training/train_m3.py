@@ -19,6 +19,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from src.models.cnn2 import CNN2
 from src.train.dataset import MotorbikeDataset
 from src.preprocess.normalize import save_stats
+from src.training.losses import FocalLoss
 from src.training.grid_search import grid_search_cnn
 from src.training.trainer import TorchTrainer, plot_curves
 from src.training.calibration import optimize_temperature, compute_all_thresholds
@@ -28,9 +29,13 @@ from src.train.common import generate_env_json, generate_model_card
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--img-size", type=int, default=160, help="Kích thước ảnh đầu vào (mặc định 160)")
     parser.add_argument("--no-aug", action="store_true", help="Chạy ablation không data augmentation")
+    parser.add_argument("--retrain", action="store_true", help="Chạy lại từ đầu 3 seeds")
+    parser.add_argument("--epochs", type=int, default=30, help="Số epochs huấn luyện (mặc định 30)")
     args = parser.parse_args()
     use_aug = not args.no_aug
+    img_sz = (args.img_size, args.img_size)
 
     reports_dir = "reports/m3_cnn2"
     weights_path = "models/m3_cnn2.pt"
@@ -40,7 +45,8 @@ def main():
     os.makedirs("reports/ablation", exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    print(f"=== [M3 CNN-2 ResNet] BẮT ĐẦU HUẤN LUYỆN (use_aug={use_aug}) trên {device} ===")
+    torch.set_num_threads(min(6, max(2, (os.cpu_count() or 4) - 2)))
+    print(f"=== [M3 CNN-2 ResNet (Tối Ưu Hóa SE-Attention)] BẮT ĐẦU HUẤN LUYỆN (use_aug={use_aug}) trên {device} (threads={torch.get_num_threads()}) ===", flush=True)
     df_tr = pd.read_csv("splits/train.csv") if os.path.exists("splits/train.csv") else pd.DataFrame(columns=["image_path", "label"])
     df_val = pd.read_csv("splits/val.csv") if os.path.exists("splits/val.csv") else pd.DataFrame(columns=["image_path", "label"])
 
@@ -48,38 +54,79 @@ def main():
     std_rgb = np.array([0.229, 0.224, 0.225], dtype=np.float32)
     save_stats(stats_path, mean_rgb, std_rgb)
 
+    # 0. Tính trọng số nghịch đảo tần suất lớp (Class Weights) để chống thiên vị SH và giải quyết triệt để sụp đổ lớp
+    counts = df_tr["label"].value_counts() if len(df_tr) > 0 else {}
+    weights = [len(df_tr) / (len(CLASS_NAMES) * max(1, counts.get(c, 1))) for c in CLASS_NAMES]
+    class_weights = torch.tensor(weights, dtype=torch.float32).to(device)
+    print("\n--- [Trọng số lớp Class Weights (Chống thiên vị & bảo vệ Wave/Air Blade)] ---", flush=True)
+    for c, w in zip(CLASS_NAMES, weights):
+        print(f"  {c:16s}: w={w:.4f}", flush=True)
+
     if len(df_tr) > 0 and os.path.exists(str(df_tr.iloc[0].get("image_path", ""))):
-        train_ds = MotorbikeDataset(df_tr, is_train=use_aug, mean=mean_rgb, std=std_rgb)
-        val_ds = MotorbikeDataset(df_val, is_train=False, mean=mean_rgb, std=std_rgb)
+        train_ds = MotorbikeDataset(df_tr, is_train=use_aug, img_size=img_sz, mean=mean_rgb, std=std_rgb, focus_crop=True)
+        val_ds = MotorbikeDataset(df_val, is_train=False, img_size=img_sz, mean=mean_rgb, std=std_rgb, focus_crop=True)
     else:
         torch.manual_seed(42)
-        train_ds = TensorDataset(torch.randn(120, 3, 112, 112), torch.tensor(np.repeat(np.arange(6), 20), dtype=torch.long))
-        val_ds = TensorDataset(torch.randn(60, 3, 112, 112), torch.tensor(np.repeat(np.arange(6), 10), dtype=torch.long))
+        train_ds = TensorDataset(torch.randn(120, 3, img_sz[0], img_sz[1]), torch.tensor(np.repeat(np.arange(6), 20), dtype=torch.long))
+        val_ds = TensorDataset(torch.randn(60, 3, img_sz[0], img_sz[1]), torch.tensor(np.repeat(np.arange(6), 10), dtype=torch.long))
 
     train_loader = DataLoader(train_ds, batch_size=32, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=32, shuffle=False)
 
-    # 1. Grid Search
-    best_cfg, df_grid = grid_search_cnn(CNN2, train_loader, val_loader, device=device)
-    df_grid.to_csv(os.path.join(reports_dir, "gridsearch.csv"), index=False)
+    gridsearch_csv = os.path.join(reports_dir, "gridsearch.csv")
+    seeds_csv = os.path.join(reports_dir, "seeds.csv")
+
+    if args.retrain and os.path.exists(gridsearch_csv):
+        try:
+            os.remove(gridsearch_csv)
+        except Exception:
+            pass
+    if args.retrain and os.path.exists(seeds_csv):
+        try:
+            os.remove(seeds_csv)
+        except Exception:
+            pass
+
+    # 1. Grid Search (Tự động nạp kết quả đã chạy nếu có)
+    best_cfg, df_grid = grid_search_cnn(CNN2, train_loader, val_loader, device=device, csv_save_path=gridsearch_csv)
 
     # 2. Chạy 3 seeds
     seed_scores = []
+    if os.path.exists(seeds_csv) and not args.retrain:
+        try:
+            df_existing_seeds = pd.read_csv(seeds_csv)
+            seed_scores = df_existing_seeds.to_dict("records")
+        except Exception:
+            seed_scores = []
+
+    completed_seeds = {int(r["seed"]) for r in seed_scores if "seed" in r} if not args.retrain else set()
     best_model = None
     t0 = time.time()
-    epochs = 20
+    epochs = args.epochs
+    print(f"\n[M3 Huấn Luyện Đa Seed] Bắt đầu huấn luyện 3 seeds [42, 43, 44] với best config: lr={best_cfg['lr']}, wd={best_cfg['wd']} ({epochs} epochs/seed, Cosine LR, SE-Attention)", flush=True)
 
     for s in [42, 43, 44]:
-        torch.manual_seed(s)
-        model = CNN2(num_classes=6, dropout_p=0.3)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = torch.optim.AdamW(model.parameters(), lr=best_cfg["lr"], weight_decay=best_cfg["wd"])
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
+        if s in completed_seeds:
+            print(f"\n>>> [Seed {s}] Đã hoàn thành trước đó (Bỏ qua)", flush=True)
+            if s == 42 and best_model is None and os.path.exists(weights_path):
+                best_model = CNN2(num_classes=6, dropout_p=0.3).to(device)
+                best_model.load_state_dict(torch.load(weights_path, map_location=device))
+            continue
 
-        trainer = TorchTrainer(model, criterion, optimizer, scheduler=scheduler, device=device, patience=15, save_path=weights_path)
+        print(f"\n>>> [Seed {s}] Bắt đầu huấn luyện...", flush=True)
+        torch.manual_seed(s)
+        model = CNN2(num_classes=6, dropout_p=0.3).to(device)
+        # Sử dụng FocalLoss kết hợp đồng thời Class Weights và Label Smoothing 0.05
+        criterion = FocalLoss(weight=class_weights, gamma=1.5, label_smoothing=0.05)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=best_cfg["lr"], weight_decay=best_cfg["wd"])
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs, eta_min=1e-6)
+
+        cur_weights_path = weights_path if s == 42 else os.path.join(os.path.dirname(weights_path), f"m3_cnn2_seed{s}.pt")
+        trainer = TorchTrainer(model, criterion, optimizer, scheduler=scheduler, device=device, patience=15, save_path=cur_weights_path)
         history_df = trainer.fit(train_loader, val_loader, epochs=epochs)
 
         seed_scores.append({"seed": s, "val_macro_f1": history_df.iloc[-1]["val_macro_f1"]})
+        pd.DataFrame(seed_scores).to_csv(seeds_csv, index=False)
         if s == 42:
             best_model = model
             history_df.to_csv(os.path.join(reports_dir, "history.csv"), index=False)
@@ -88,14 +135,23 @@ def main():
     train_time = time.time() - t0
     df_seeds = pd.DataFrame(seed_scores)
     df_seeds.to_csv(os.path.join(reports_dir, "seeds.csv"), index=False)
+    print(f"\n>>> Hoàn tất 3 seeds! Macro-F1 trung bình: {df_seeds['val_macro_f1'].mean():.4f} +/- {df_seeds['val_macro_f1'].std():.4f}", flush=True)
 
-    # 3. Calibration
+    # 3. Calibration với Test-Time Augmentation (TTA: ảnh gốc + lật ngang)
+    print("\n[M3 Hiệu Chỉnh] Đang chạy Temperature Scaling (TTA) và tính ngưỡng tin cậy...", flush=True)
+    if best_model is None and os.path.exists(weights_path):
+        best_model = CNN2(num_classes=6, dropout_p=0.3).to(device)
+        best_model.load_state_dict(torch.load(weights_path, map_location=device))
     best_model.eval()
     val_logits, val_targets = [], []
     with torch.no_grad():
         for xb, yb in val_loader:
             xb = xb.to(device)
-            val_logits.append(best_model(xb).cpu().numpy())
+            xb_flip = torch.flip(xb, dims=[3])
+            l_orig = best_model(xb)
+            l_flip = best_model(xb_flip)
+            l_avg = 0.5 * (l_orig + l_flip)
+            val_logits.append(l_avg.cpu().numpy())
             val_targets.extend(yb.numpy())
     val_logits_arr = np.concatenate(val_logits, axis=0)
     val_y_arr = np.array(val_targets)
@@ -104,6 +160,45 @@ def main():
     exp_s = np.exp((val_logits_arr / T) - np.max(val_logits_arr / T, axis=1, keepdims=True))
     cal_probs = exp_s / np.sum(exp_s, axis=1, keepdims=True)
     threshs = compute_all_thresholds(val_y_arr, cal_probs, None)
+
+    # 3b. Đánh giá Ensemble 3 Seeds (Soft-Voting + TTA) để bứt phá tối đa hiệu năng
+    print("\n[M3 Ensemble] Đang đánh giá Ensemble 3 Seeds (Soft-Voting + TTA)...", flush=True)
+    seed_models = []
+    for s in [42, 43, 44]:
+        p = weights_path if s == 42 else os.path.join(os.path.dirname(weights_path), f"m3_cnn2_seed{s}.pt")
+        if os.path.exists(p):
+            sm = CNN2(num_classes=6, dropout_p=0.3).to(device)
+            sm.load_state_dict(torch.load(p, map_location=device))
+            sm.eval()
+            seed_models.append(sm)
+
+    if len(seed_models) == 3:
+        ens_probs = []
+        with torch.no_grad():
+            for xb, yb in val_loader:
+                xb = xb.to(device)
+                xb_flip = torch.flip(xb, dims=[3])
+                batch_ens = torch.zeros(len(yb), 6, device=device)
+                for sm in seed_models:
+                    l_avg = 0.5 * (sm(xb) + sm(xb_flip))
+                    batch_ens += torch.softmax(l_avg, dim=1)
+                batch_ens /= len(seed_models)
+                ens_probs.append(batch_ens.cpu().numpy())
+        ens_probs_arr = np.concatenate(ens_probs, axis=0)
+        ens_preds = ens_probs_arr.argmax(axis=1)
+        ens_top1 = float(np.mean(ens_preds == val_y_arr))
+        ens_top3 = compute_accuracy_topk(val_y_arr, ens_probs_arr, ks=(3,))["top3_acc"]
+        ens_per_class = compute_per_class_metrics(val_y_arr, ens_preds, num_classes=6)
+        ensemble_report = {
+            "top1_acc": ens_top1,
+            "top3_acc": ens_top3,
+            "macro_f1": ens_per_class["macro_f1"],
+            "weighted_f1": ens_per_class["weighted_f1"],
+            "per_class": ens_per_class["per_class"]
+        }
+        with open(os.path.join(reports_dir, "ensemble_metrics.json"), "w", encoding="utf-8") as fp:
+            json.dump(ensemble_report, fp, indent=2)
+        print(f"  >>> [M3 ENSEMBLE 3 SEEDS (TTA)] Top-1: {ens_top1*100:.2f}% | Top-3: {ens_top3*100:.2f}% | Macro-F1: {ens_per_class['macro_f1']:.4f}", flush=True)
 
     # 4. Gói báo cáo
     n_params = sum(p.numel() for p in best_model.parameters())

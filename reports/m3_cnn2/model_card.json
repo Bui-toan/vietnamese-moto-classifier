@@ -3,7 +3,7 @@
   "frozen": true,
   "weights": {
     "path": "models/m3_cnn2.pt",
-    "sha256": "4fab431c6b8a13cae2a9ca156f08120db3e503edf6fdaaf49593d6a9efdb14d8"
+    "sha256": "38b7eb8928ad79ffe5d861aec3f89e0916c0cebbc68cfefc64e087b88c0fa38d"
   },
   "stats": {
     "path": "models/cnn2_stats.npz",
@@ -11,6 +11,6 @@
   },
   "config": {
     "path": "reports/m3_cnn2\\config.json",
-    "sha256": "ee27e26c60d2fa3000c1c7999e87af27939930e21545167c7eff5402514ab0ba"
+    "sha256": "8bbb36c8578b8a45b256238f46af541d400133974230f73dcb9e3c53c4246032"
   }
 }

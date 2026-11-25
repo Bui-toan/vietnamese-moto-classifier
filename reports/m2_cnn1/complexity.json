@@ -1,10 +1,10 @@
 {
-  "total_params": 94246,
-  "trainable_params": 94246,
+  "total_params": 375878,
+  "trainable_params": 375878,
   "macs": null,
-  "model_size_mb": 0.36716365814208984,
-  "train_time_s": 88.51574492454529,
+  "model_size_mb": 1.4432744979858398,
+  "train_time_s": 10997.317973852158,
   "best_epoch": 15,
-  "seeds_f1_mean": 0.048329779673063254,
-  "seeds_f1_std": 0.0012310240281228685
+  "seeds_f1_mean": 0.5057661272979259,
+  "seeds_f1_std": 0.009829129438700925
 }

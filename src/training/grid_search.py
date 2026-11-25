@@ -7,7 +7,8 @@ Tuân thủ nghiêm ngặt mục 5.1 của kế hoạch v4:
 - Tiêu chí lựa chọn: Val Macro-F1.
 """
 
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Tuple, Any, Optional
+import os
 import numpy as np
 import pandas as pd
 import torch
@@ -70,16 +71,40 @@ def grid_search_cnn(
     grid_lr: List[float] = [1e-3, 5e-4],
     grid_wd: List[float] = [1e-4, 1e-3],
     max_epochs: int = 5,
-    device: Optional[torch.device] = None
+    device: Optional[torch.device] = None,
+    csv_save_path: Optional[str] = None
 ) -> Tuple[Dict[str, Any], pd.DataFrame]:
-    """Chạy Grid Search cho CNN trên seed 42."""
+    """Chạy Grid Search cho CNN trên seed 42 với checkpointing."""
     dev = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
     results = []
-    best_f1 = -1.0
-    best_cfg = {"lr": 1e-3, "wd": 1e-4}
+    
+    # Nạp các tổ hợp đã hoàn tất trước đó nếu có file checkpoint
+    if csv_save_path and os.path.exists(csv_save_path):
+        try:
+            df_existing = pd.read_csv(csv_save_path)
+            for _, r in df_existing.iterrows():
+                results.append({
+                    "lr": float(r["lr"]),
+                    "weight_decay": float(r["weight_decay"]),
+                    "val_macro_f1": float(r["val_macro_f1"])
+                })
+        except Exception:
+            results = []
+
+    total_combos = len(grid_lr) * len(grid_wd)
+    print(f"\n[Grid Search M2] Khảo sát {total_combos} tổ hợp siêu tham số ({max_epochs} epochs/tổ hợp)...", flush=True)
+    combo_idx = 0
 
     for lr in grid_lr:
         for wd in grid_wd:
+            combo_idx += 1
+            # Kiểm tra xem tổ hợp này đã tính chưa
+            existing = [r for r in results if abs(r["lr"] - lr) < 1e-7 and abs(r["weight_decay"] - wd) < 1e-7]
+            if existing:
+                print(f"  [Tổ hợp {combo_idx}/{total_combos}] Đã có kết quả lưu trước đó: lr={lr}, wd={wd} -> Val Macro-F1 = {existing[0]['val_macro_f1']:.4f} (Tiếp tục)", flush=True)
+                continue
+
+            print(f"  [Tổ hợp {combo_idx}/{total_combos}] Đang chạy: lr={lr}, weight_decay={wd}...", flush=True)
             torch.manual_seed(42)
             model = model_class(num_classes=6).to(dev)
             criterion = nn.CrossEntropyLoss()
@@ -106,9 +131,12 @@ def grid_search_cnn(
                     all_targets.extend(yb.numpy())
 
             f1 = compute_per_class_metrics(np.array(all_targets), np.array(all_preds), num_classes=6)["macro_f1"]
+            print(f"  --> Hoàn tất tổ hợp {combo_idx}: Val Macro-F1 = {f1:.4f}", flush=True)
             results.append({"lr": lr, "weight_decay": wd, "val_macro_f1": f1})
-            if f1 > best_f1:
-                best_f1 = f1
-                best_cfg = {"lr": lr, "wd": wd}
+            if csv_save_path:
+                pd.DataFrame(results).to_csv(csv_save_path, index=False)
 
-    return best_cfg, pd.DataFrame(results)
+    df_grid = pd.DataFrame(results)
+    best_row = df_grid.loc[df_grid["val_macro_f1"].idxmax()]
+    best_cfg = {"lr": float(best_row["lr"]), "wd": float(best_row["weight_decay"])}
+    return best_cfg, df_grid
